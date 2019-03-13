@@ -7,7 +7,7 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
 
-    boolean[] keys = new boolean[1024];
+    boolean[] keys = new boolean[1024]; 
 
     public void keyPressed()
     {
