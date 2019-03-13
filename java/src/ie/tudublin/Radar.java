@@ -17,7 +17,7 @@ public class Radar extends PApplet
         this.y = y;
         this.diameter = diameter;
         radius = diameter / 2;
-        this.theta = 0;
+        this.theta = 0; 
     }
     
     public void render()
