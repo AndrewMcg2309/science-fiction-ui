@@ -35,7 +35,7 @@ public class Radar extends PApplet
 
     public void update()
     {
-        theta += 0.01f;
+        theta += 0.05f;
     }
 
 }
