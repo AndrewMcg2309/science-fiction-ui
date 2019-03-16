@@ -3,7 +3,7 @@
 
 package ie.tudublin;
 
-import processing.core.PApplet;
+import processing.core.*;
 
 public class UI extends PApplet
 {
@@ -68,7 +68,35 @@ public class UI extends PApplet
         drawGrid();
         drawRing();
         drawSphere();
+
+        // Areas
+        topRight();
     }
+
+    public void topRight()
+    {
+        /*noFill();
+        stroke(0, 255, 255);
+        strokeWeight(1);
+        polygon(6, 0, 0, 90);
+
+        stroke(255);
+        strokeWeight(0.5f);
+        polygon(6, 0, 0, 65);
+        polygon(6, 0, 0, 50);
+        polygon(6, 0, 0, 35);*/
+    }
+
+    void polygon(int n, float cx, float cy, float r) {
+        float angle = 360.0f / n;
+      
+        beginShape();
+        for (int i = 0; i < n; i++) {
+          vertex(cx + r * cos(radians(angle * i)),
+            cy + r * sin(radians(angle * i)));
+        }
+        endShape(CLOSE);
+      }
 
     public void drawGrid()
     {
