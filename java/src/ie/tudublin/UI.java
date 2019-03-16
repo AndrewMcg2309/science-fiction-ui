@@ -1,3 +1,6 @@
+// Info 
+//      On Fullscreen - Dims (1535, y) roughly..
+
 package ie.tudublin;
 
 import processing.core.PApplet;
@@ -41,9 +44,9 @@ public class UI extends PApplet
         mc = new MovingCircle(this, width / 2, height / 2, 50);
         radar = new Radar(this, width / 4, height / 4, 200);
 
-
-            t = 0;
-            r = 130;
+        // Sphere
+        t = 0;
+        r = 130;
     }
 
     public void draw()
@@ -62,8 +65,38 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }
 
+        drawGrid();
         drawRing();
         drawSphere();
+    }
+
+    public void drawGrid()
+    {
+        float frame = 20;
+        float angleD = 50;
+        float fractW = width / 5;
+        float fractH = height / 5;
+
+        float radius = 10;
+        fill(255);
+
+        stroke(255, 255, 255); //255-0-255 when finished 
+        
+        // Top Left
+
+        // Top Right
+        
+            ellipse(fractW * 4 - (angleD / 2), frame + angleD / 2, radius, radius);
+        line(fractW * 4 - (angleD / 2), frame + angleD / 2, fractW * 4, frame);
+        line(fractW * 4, frame, width - (frame + angleD), frame);
+        line(width - (frame + angleD), frame, width - frame, frame + angleD);
+        line(width - frame, frame + angleD, width - frame, fractH);
+        line(width - frame, fractH, width - (frame + angleD / 2), fractH + angleD / 2);
+            ellipse(width - (frame + angleD / 2), fractH + angleD / 2, radius, radius);
+
+        //Bottom Left
+
+        // Bottom Right
     }
 
     public void drawSphere()
