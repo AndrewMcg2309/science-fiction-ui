@@ -1,12 +1,12 @@
 # SciFi UI Project
 
-Name:
+Name: Andrew McGowan
 
-Student Number: 
-
-Fork this repository and use it a starter project for your assignment
+Student Number: C16470866
 
 # Description of the assignment
+
+My User Interface is a Sci-Fi control panel.
 
 # Instructions
 
