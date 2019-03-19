@@ -40,9 +40,9 @@ public class UI extends PApplet
 
     public void setup()
     {
-        b = new Button(this, 50, 50, 100, 50, "I am a button");
-        mc = new MovingCircle(this, width / 2, height / 2, 50);
-        radar = new Radar(this, width / 4, height / 4, 200);
+        //b = new Button(this, 50, 50, 100, 50, "I am a button");
+        //mc = new MovingCircle(this, width / 2, height / 2, 50);
+        radar = new Radar(this, width / 5, height / 5, 200);
 
         // Sphere
         t = 0;
@@ -52,10 +52,10 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        b.render();
+        //b.render();
 
-        mc.update();
-        mc.render();
+        //mc.update();
+        //mc.render();
 
         radar.update();
         radar.render();
@@ -101,6 +101,7 @@ public class UI extends PApplet
     public void drawGrid()
     {
         float frame = 20;
+        float bigF = 80;
         float angleD = 50;
         float fractW = width / 5;
         float fractH = height / 5;
@@ -125,6 +126,20 @@ public class UI extends PApplet
         //Bottom Left
 
         // Bottom Right
+            ellipse(width - bigF, height / 3, radius, radius);
+        line(width - bigF, height / 3, width - bigF, height / 3 + bigF);
+        line(width - bigF, height / 3 + bigF, width - frame, height / 3 + bigF +60);
+        line(width - frame, height / 3 + bigF +60, width - frame, height / 10 * 9);
+        line(width - frame, height / 10 * 9 , width - 60, height - bigF / 2 - 10);
+        line(width - 60, height - bigF / 2 -10, width - 80,height - bigF / 2 -10 );
+        line(width - 80,height - bigF / 2 -10, width - bigF - 30, height - frame);
+        line(width - bigF - 30, height - frame, width - (width / 5), height - frame);
+        line(width - (width / 5), height - frame, width / 5 * 4, height - frame);
+        line(width / 5 * 4, height - frame, width / 5 * 4 - (bigF / 2), height - frame - bigF / 2);
+        line(width / 5 * 4 - (bigF / 2), height - frame - bigF / 2, width / 5 * 4 - (bigF / 2 ) - (bigF * 2) ,height - frame - bigF / 2);
+        line(width / 5 * 4 - (bigF / 2 ) - (bigF * 2) ,height - frame - bigF / 2, width / 5 * 4 - (bigF / 2 ) - (bigF * 2) - bigF /2, height - frame);
+        line(width / 5 * 4 - (bigF / 2 ) - (bigF * 2) - bigF /2, height - frame, width / 2, height - frame);
+            ellipse(width / 2, height - frame, radius, radius);
     }
 
     public void drawSphere()
