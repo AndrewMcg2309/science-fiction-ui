@@ -20,11 +20,10 @@ public class UI extends PApplet
     //Arc Details
     int AX = width / 2;
     int AY = height / 2;
-    int lar = 300;
-    int alt = 300;
+    int rad1 = 300;
+    int rad2 = 300;
     int ang1 = 1;
     int ang2 = 1;
-    int ang3 = 1;
 
     public void keyPressed()
     {
@@ -94,11 +93,10 @@ public class UI extends PApplet
 
         ang1 += 1;
         ang2 += 5;
-        ang3 += 1;
         pushMatrix();
         translate(width / 2 - 50, height / 2 - 50);
-            arc(AX, AY, lar, alt, radians(ang1), radians(ang1+300));
-            arc(AX, AY, lar+50, alt+50, radians(-ang2), radians(-ang2+150));
+            arc(AX, AY, rad1, rad2, radians(ang1), radians(ang1+300));
+            arc(AX, AY, rad1+50, rad2+50, radians(-ang2), radians(-ang2+150));
         popMatrix();
     }
 
@@ -147,6 +145,20 @@ public class UI extends PApplet
         strokeWeight(0.8f);
         
         // Top Left
+
+            ellipse(width / 6, height / 5, radius, radius);
+        line(width / 6, height / 5, frame * 2, height / 5);
+        line(frame * 2, height / 5, frame, height / 5 - frame);
+        line(frame, height / 5 - frame, frame, frame * 2);
+        line(frame, frame * 2, frame * 2, frame);
+        line(frame * 2, frame, width / 6, frame);
+        line(width / 6, frame, width / 6 + frame, frame * 2);
+        line(width / 6 + frame, frame * 2, width / 6 + frame + angleD, frame * 2);
+        line(width / 6 + frame + angleD, frame * 2, width / 6 + frame * 2 + angleD, frame);
+        line(width / 6 + frame * 2 + angleD, frame, width / 2, frame);
+        line(width / 2, frame, width / 2 + bigF / 2, frame + bigF / 2);
+            ellipse(width / 2 + bigF / 2, frame + bigF / 2, radius, radius);
+        
 
         // Top Right
         
