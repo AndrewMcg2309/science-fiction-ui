@@ -42,7 +42,7 @@ public class UI extends PApplet
     {
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
-        radar = new Radar(this, width / 5, height / 5, 200);
+        radar = new Radar(this, width - (width / 8), height - (height / 6) - 20, 200);
 
         // Sphere
         t = 0;
@@ -60,31 +60,38 @@ public class UI extends PApplet
         radar.update();
         radar.render();
 
-        if (checkKey(LEFT))
+        /*if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
-        }
+        }*/
 
+
+        topRight();
         drawGrid();
         drawRing();
         drawSphere();
 
         // Areas
-        topRight();
+      
     }
 
     public void topRight()
     {
-        /*noFill();
-        stroke(0, 255, 255);
-        strokeWeight(1);
-        polygon(6, 0, 0, 90);
+        pushMatrix();
+            translate(width - (width / 8), height / 6);
 
-        stroke(255);
-        strokeWeight(0.5f);
-        polygon(6, 0, 0, 65);
-        polygon(6, 0, 0, 50);
-        polygon(6, 0, 0, 35);*/
+            noFill();
+            stroke(0, 255, 255);
+            strokeWeight(1);
+            polygon(6, 0, 0, 90);
+
+            stroke(255);
+            strokeWeight(0.5f);
+            polygon(6, 0, 0, 65);
+            polygon(6, 0, 0, 50);
+            polygon(6, 0, 0, 35);
+
+        popMatrix();
     }
 
     void polygon(int n, float cx, float cy, float r) {
@@ -110,6 +117,7 @@ public class UI extends PApplet
         fill(255);
 
         stroke(255, 255, 255); //255-0-255 when finished 
+        strokeWeight(0.8f);
         
         // Top Left
 
@@ -166,5 +174,7 @@ public class UI extends PApplet
         ellipse(w, h, 300, 300);
         popMatrix();
     }
+
+    
 }
 
