@@ -90,16 +90,15 @@ public class UI extends PApplet
         stroke(255);
         strokeWeight(2);
         smooth();
-
         noFill();
 
         ang1 += 1;
-        ang2 += 1;
+        ang2 += 5;
         ang3 += 1;
         pushMatrix();
         translate(width / 2 - 50, height / 2 - 50);
-        arc(AX, AY, lar, alt, radians(ang1), radians(ang1+300));
-        arc(AX, AY, lar+50, alt+50, radians(-ang2), radians(-ang2+150));
+            arc(AX, AY, lar, alt, radians(ang1), radians(ang1+300));
+            arc(AX, AY, lar+50, alt+50, radians(-ang2), radians(-ang2+150));
         popMatrix();
     }
 
@@ -161,7 +160,15 @@ public class UI extends PApplet
 
         //Bottom Left
 
+            ellipse(frame + angleD / 2, height - (height / 4) - angleD / 2, radius, radius);
+        line(frame + angleD / 2, height - (height / 4) - angleD / 2, frame, height - (height / 4));
+        line(frame, height - (height / 4), frame, height - frame);
+        line(frame, height - frame, width / 3 - bigF, height - frame);
+        line(width / 3 - bigF, height - frame, (width / 3 - bigF) + angleD / 2, (height - frame) - angleD / 2);
+            ellipse((width / 3 - bigF) + angleD / 2, (height - frame) - angleD / 2, radius, radius);
+
         // Bottom Right
+
             ellipse(width - bigF, height / 3, radius, radius);
         line(width - bigF, height / 3, width - bigF, height / 3 + bigF);
         line(width - bigF, height / 3 + bigF, width - frame, height / 3 + bigF +60);
