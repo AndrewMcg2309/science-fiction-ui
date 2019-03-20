@@ -17,6 +17,15 @@ public class UI extends PApplet
 
     boolean[] keys = new boolean[1024]; 
 
+    //Arc Details
+    int AX = width / 2;
+    int AY = height / 2;
+    int lar = 300;
+    int alt = 300;
+    int ang1 = 1;
+    int ang2 = 1;
+    int ang3 = 1;
+
     public void keyPressed()
     {
         keys[keyCode] = true;
@@ -65,14 +74,33 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }*/
 
-
+        drawArc();
         topRight();
         drawGrid();
-        drawRing();
+        //drawRing();
         drawSphere();
 
         // Areas
       
+    }
+
+
+    public void drawArc()
+    {
+        stroke(255);
+        strokeWeight(2);
+        smooth();
+
+        noFill();
+
+        ang1 += 1;
+        ang2 += 1;
+        ang3 += 1;
+        pushMatrix();
+        translate(width / 2 - 50, height / 2 - 50);
+        arc(AX, AY, lar, alt, radians(ang1), radians(ang1+300));
+        arc(AX, AY, lar+50, alt+50, radians(-ang2), radians(-ang2+150));
+        popMatrix();
     }
 
     public void topRight()
@@ -82,7 +110,7 @@ public class UI extends PApplet
 
             noFill();
             stroke(0, 255, 255);
-            strokeWeight(1);
+            strokeWeight(2);
             polygon(6, 0, 0, 90);
 
             stroke(255);
@@ -158,11 +186,11 @@ public class UI extends PApplet
         rotateY(rotateX);
         noFill();
         stroke(0, 255, 255);
-        strokeWeight(1);
+        strokeWeight(0.5f);
         sphere(r);
     }
 
-    public void drawRing()
+    /*public void drawRing()
     {
         pushMatrix();
         float h = height / 2;
@@ -173,7 +201,7 @@ public class UI extends PApplet
         strokeWeight(2);
         ellipse(w, h, 300, 300);
         popMatrix();
-    }
+    }*/
 
     
 }
