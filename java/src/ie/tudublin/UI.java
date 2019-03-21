@@ -9,8 +9,7 @@ public class UI extends PApplet
 {
     Button b;
     MovingCircle mc;
-    Radar radar;
-    Radar radar1, radar2, radar3;
+    Radar radar, radar1, radar2;
 
     float t, r;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
@@ -51,7 +50,11 @@ public class UI extends PApplet
     {
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
-        radar = new Radar(this, width - (width / 8), height - (height / 6) - 20, 200);
+        radar = new Radar(this, width / 15, 295, 75);
+        radar1 = new Radar(this, width / 15, 395, 75);
+        radar2 = new Radar(this, width / 15, 495, 75);
+
+        
 
         // Sphere
         t = 0;
@@ -68,6 +71,10 @@ public class UI extends PApplet
 
         radar.update();
         radar.render();
+        radar1.update();
+        radar1.render();
+        radar2.update();
+        radar2.render();
 
         /*if (checkKey(LEFT))
         {
@@ -95,7 +102,6 @@ public class UI extends PApplet
         rect(frame, height / 4, 300, 360);
 
         // Three radars
-        
     }
 
 

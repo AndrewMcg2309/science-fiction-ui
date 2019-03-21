@@ -31,13 +31,13 @@ public class Radar extends PApplet
         // Static field
         float x1 = x + (float)Math.sin(theta) * radius;
         float y1 = y - (float)Math.cos(theta) * radius;
-        ui.line(x,y, x1, y1);
+        ui.line(x, y, x1, y1);
 
     }
 
     public void update()
     {
-        theta += 0.05f;
+        theta += random(0.05f, 0.09f);
     }
 
 }
