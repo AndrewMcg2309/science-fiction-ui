@@ -10,6 +10,7 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     Radar radar;
+    Radar radar1, radar2, radar3;
 
     float t, r;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
@@ -73,6 +74,7 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }*/
 
+        drawLeftMid();
         drawArc();
         topRight();
         drawGrid();
@@ -81,6 +83,19 @@ public class UI extends PApplet
 
         // Areas
       
+    }
+
+
+    public void drawLeftMid()
+    {
+        float frame = 50;
+        stroke(255);
+        noFill();
+        strokeWeight(1);
+        rect(frame, height / 4, 300, 360);
+
+        // Three radars
+        
     }
 
 
