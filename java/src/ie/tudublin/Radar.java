@@ -28,6 +28,9 @@ public class Radar extends PApplet
         ui.ellipse(x, y, diameter, diameter);
         ui.fill(255);
         ui.stroke(255);
+        ui.noFill();
+        ui.ellipse(x, y, 20, 20);
+        ui.fill(255);
         // Static field
         float x1 = x + (float)Math.sin(theta) * radius;
         float y1 = y - (float)Math.cos(theta) * radius;
@@ -37,7 +40,7 @@ public class Radar extends PApplet
 
     public void update()
     {
-        theta += random(0.05f, 0.09f);
+        theta += random(0.05f, 0.15f);
     }
 
 }

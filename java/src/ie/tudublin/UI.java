@@ -7,6 +7,8 @@ import processing.core.*;
 
 public class UI extends PApplet
 {
+    PImage img;
+
     Button b;
     MovingCircle mc;
     Radar radar, radar1, radar2;
@@ -20,8 +22,7 @@ public class UI extends PApplet
     //Arc Details
     int AX = width / 2;
     int AY = height / 2;
-    int rad1 = 300;
-    int rad2 = 300;
+    int rad = 300;
     int ang1 = 1;
     int ang2 = 1;
 
@@ -44,6 +45,8 @@ public class UI extends PApplet
     public void settings()
     {
         fullScreen(P3D);
+
+        img = loadImage("circle.png");
     }
 
     public void setup()
@@ -54,8 +57,6 @@ public class UI extends PApplet
         radar1 = new Radar(this, width / 15, 395, 75);
         radar2 = new Radar(this, width / 15, 495, 75);
 
-        
-
         // Sphere
         t = 0;
         r = 130;
@@ -64,6 +65,7 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
+        image(img, 560, 220, 420, 420);
         //b.render();
 
         //mc.update();
@@ -116,8 +118,8 @@ public class UI extends PApplet
         ang2 += 5;
         pushMatrix();
         translate(width / 2 - 50, height / 2 - 50);
-            arc(AX, AY, rad1, rad2, radians(ang1), radians(ang1+300));
-            arc(AX, AY, rad1+50, rad2+50, radians(-ang2), radians(-ang2+150));
+            arc(AX, AY, rad, rad, radians(ang1), radians(ang1+300));
+            arc(AX, AY, rad + 50, rad + 50, radians(-ang2), radians(-ang2+150));
         popMatrix();
     }
 
