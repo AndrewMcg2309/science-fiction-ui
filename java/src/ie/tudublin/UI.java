@@ -202,6 +202,15 @@ public class UI extends PApplet
         line(width / 3 - bigF, height - frame, (width / 3 - bigF) + angleD / 2, (height - frame) - angleD / 2);
             ellipse((width / 3 - bigF) + angleD / 2, (height - frame) - angleD / 2, radius, radius);
 
+                // Grid for Console
+                noFill();
+                stroke(0, 255, 255);
+                    textSize(25);
+                    text("Console", angleD * 3.8f, height - 218);
+                        rect(angleD, height / 8 * 6, width / 5 + 70, 175, 10);
+                stroke(255);
+                fill(255);
+
         // Bottom Right
 
             ellipse(width - bigF, height / 3, radius, radius);
