@@ -65,7 +65,7 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
-        image(img, 560, 220, 420, 420);
+        image(img, 560, 223, 418, 418);
         //b.render();
 
         //mc.update();
@@ -118,8 +118,8 @@ public class UI extends PApplet
         ang2 += 5;
         pushMatrix();
         translate(width / 2 - 50, height / 2 - 50);
-            arc(AX, AY, rad, rad, radians(ang1), radians(ang1+300));
-            arc(AX, AY, rad + 50, rad + 50, radians(-ang2), radians(-ang2+150));
+            arc(AX, AY, rad + 50, rad + 50, radians(ang1), radians(ang1+300));
+            arc(AX, AY, rad + 100, rad + 100, radians(-ang2), radians(-ang2+150));
         popMatrix();
     }
 
