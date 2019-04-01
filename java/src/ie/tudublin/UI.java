@@ -93,6 +93,7 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }*/
 
+        buttons();
         console();
         drawLeftMid();
         drawArc();
@@ -104,6 +105,24 @@ public class UI extends PApplet
 
         
       
+    }
+
+    public void buttons()
+    {
+        float lenX = 70;
+        float lenY = 40;
+
+        noFill();
+
+        rect(340, 50, lenX, lenY, 10);
+        rect(430, 50, lenX, lenY, 10);
+        rect(520, 50, lenX, lenY, 10);
+        rect(610, 50, lenX, lenY, 10);
+        rect(700, 50, lenX, lenY, 10);
+
+
+
+
     }
 
     public void console()
