@@ -10,6 +10,8 @@ public class Radar extends PApplet
     private float theta;
     UI ui;
 
+    int i = 0;
+
     public Radar(UI ui, float x, float y, float diameter)
     {
         this.ui = ui;
@@ -23,7 +25,7 @@ public class Radar extends PApplet
     public void render()
     {
         ui.strokeWeight(2);
-        ui.stroke(0, 255, 255);
+        //ui.stroke(0, 255, 255);
         ui.noFill();
         ui.ellipse(x, y, diameter, diameter);
         ui.fill(255);

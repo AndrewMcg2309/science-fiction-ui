@@ -12,6 +12,7 @@ public class UI extends PApplet
     Button b;
     MovingCircle mc;
     Radar radar, radar1, radar2;
+    Radar radar00, radar11, radar22;
 
     float t, r;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
@@ -56,6 +57,8 @@ public class UI extends PApplet
         radar = new Radar(this, width / 15, 295, 75);
         radar1 = new Radar(this, width / 15, 395, 75);
         radar2 = new Radar(this, width / 15, 495, 75);
+        
+        
 
         // Sphere
         t = 0;
@@ -70,28 +73,89 @@ public class UI extends PApplet
 
         //mc.update();
         //mc.render();
-
+        stroke(255, 0, 255);
         radar.update();
         radar.render();
+        stroke(255, 255, 0);
         radar1.update();
         radar1.render();
+        stroke(0, 255, 255);
         radar2.update();
         radar2.render();
+
+        // Hover
+        
+        
+        
 
         /*if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
         }*/
 
+        console();
         drawLeftMid();
         drawArc();
         topRight();
         drawGrid();
         //drawRing();
         drawSphere();
-
         // Areas
+
+        
       
+    }
+
+    public void console()
+    {
+        float wid1 = width / 15 - 37.5f;
+        float wid2 = width / 15 + 37.5f;
+
+        float disX = 150;
+        float disY = height / 8 * 6f + 90;
+        
+        
+    // PURPLE RADAR
+        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 220 && mouseY <= 332.5 )
+        {   
+            pushMatrix();
+                noFill();
+                //ellipse(disX, disY, 130, 130);
+                stroke(255, 0, 255);
+                radar00 = new Radar(this, disX, disY, 130);
+                radar00.render();
+            popMatrix();
+            
+        }
+    
+    // YELLOW RADAR
+        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 357.5 && mouseY <= 432.5 )
+        {   
+            pushMatrix();
+                noFill();
+                //ellipse(disX, disY, 130, 130);
+                stroke(255, 255, 0);
+                radar11 = new Radar(this, disX, disY, 130);
+                radar11.render();
+            popMatrix();
+        
+        }
+    
+    // BLUE RADAR
+        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 457.5 && mouseY <= 532.5 )
+        {   
+            pushMatrix();
+                noFill();
+                //ellipse(disX, disY, 130, 130);
+                stroke(0, 255, 255);
+                radar22 = new Radar(this, disX, disY, 130);
+                radar22.render();
+            popMatrix();
+            
+        }
+
+        
+        
     }
 
 
