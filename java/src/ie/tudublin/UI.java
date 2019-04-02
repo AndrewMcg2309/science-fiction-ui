@@ -45,7 +45,7 @@ public class UI extends PApplet
 
     public void settings()
     {
-        fullScreen(P3D);
+        fullScreen(P3D, SPAN);
 
         img = loadImage("circle.png");
     }
@@ -54,21 +54,19 @@ public class UI extends PApplet
     {
         //b = new Button(this, 50, 50, 100, 50, "I am a button");
         //mc = new MovingCircle(this, width / 2, height / 2, 50);
-        radar = new Radar(this, width / 15, 295, 75);
-        radar1 = new Radar(this, width / 15, 395, 75);
-        radar2 = new Radar(this, width / 15, 495, 75);
+        radar = new Radar(this, width / 22, 640, 100);
+        radar1 = new Radar(this, width / 22, 765, 100);
+        radar2 = new Radar(this, width / 22, 890, 100);
         
-        
-
         // Sphere
         t = 0;
-        r = 130;
+        r = 300;
     }
 
     public void draw()
     {
         background(0);
-        image(img, 560, 223, 418, 418);
+        image(img, width / 3 + 155, height / 4 + 55, 970, 970);
         //b.render();
 
         //mc.update();
@@ -113,12 +111,16 @@ public class UI extends PApplet
         float lenY = 40;
 
         noFill();
+        stroke(255, 0, 255);
 
         rect(340, 50, lenX, lenY, 10);
         rect(430, 50, lenX, lenY, 10);
         rect(520, 50, lenX, lenY, 10);
         rect(610, 50, lenX, lenY, 10);
         rect(700, 50, lenX, lenY, 10);
+
+        // Icons
+        
 
 
 
@@ -183,8 +185,8 @@ public class UI extends PApplet
         float frame = 50;
         stroke(255);
         noFill();
-        strokeWeight(1);
-        rect(frame, height / 4, 300, 360);
+        strokeWeight(2);
+        rect(frame, height / 4, 700, 450, 15);
 
         // Three radars
     }
@@ -201,8 +203,9 @@ public class UI extends PApplet
         ang2 += 5;
         pushMatrix();
         translate(width / 2 - 50, height / 2 - 50);
-            arc(AX, AY, rad + 50, rad + 50, radians(ang1), radians(ang1+300));
-            arc(AX, AY, rad + 100, rad + 100, radians(-ang2), radians(-ang2+150));
+            //arc(AX, AY, rad + 500, rad + 500, radians(ang1), radians(ang1+300));
+            arc(AX, AY, rad + 600, rad + 200, radians(-ang2), radians(-ang2+150));
+            
         popMatrix();
     }
 
@@ -244,11 +247,11 @@ public class UI extends PApplet
         float fractW = width / 5;
         float fractH = height / 5;
 
-        float radius = 10;
+        float radius = 20;
         fill(255);
 
         stroke(255, 255, 255); //255-0-255 when finished 
-        strokeWeight(0.8f);
+        strokeWeight(2f);
         
         // Top Left
 
@@ -288,10 +291,12 @@ public class UI extends PApplet
                 // Grid for Console
                 noFill();
                 stroke(0, 255, 255);
-                    textSize(25);
-                    text("Console", angleD * 3.8f, height - 218);
-                        rect(angleD, height / 8 * 6, width / 5 + 70, 175, 10);
+                strokeWeight(2);
+                    textSize(40);
+                    text("Console", angleD * 10, height / 8 * 6 - 5);
+                        rect(angleD, height / 8 * 6, width / 3 - 150, 500, 10);
                 stroke(255);
+                strokeWeight(2);
                 fill(255);
 
         // Bottom Right
@@ -320,7 +325,7 @@ public class UI extends PApplet
         rotateY(rotateX);
         noFill();
         stroke(0, 255, 255);
-        strokeWeight(0.5f);
+        strokeWeight(1f);
         sphere(r);
     }
 
