@@ -8,6 +8,7 @@ import processing.core.*;
 public class UI extends PApplet
 {
     PImage img;
+    PImage person, people, settings, power, location;
 
     Button b;
     MovingCircle mc;
@@ -48,6 +49,11 @@ public class UI extends PApplet
         fullScreen(P3D, SPAN);
 
         img = loadImage("circle.png");
+        people = loadImage("people.png");
+        person = loadImage("person.png");
+        location = loadImage("location.png");
+        settings = loadImage("settings.png");
+        power = loadImage("power.png");
     }
 
     public void setup()
@@ -107,69 +113,71 @@ public class UI extends PApplet
 
     public void buttons()
     {
-        float lenX = 70;
-        float lenY = 40;
+        float lenX = 100;
+        float lenY = 60;
 
-        noFill();
-        stroke(255, 0, 255);
+        fill(255);
+        stroke(0, 255, 255);
 
-        rect(340, 50, lenX, lenY, 10);
-        rect(430, 50, lenX, lenY, 10);
-        rect(520, 50, lenX, lenY, 10);
-        rect(610, 50, lenX, lenY, 10);
-        rect(700, 50, lenX, lenY, 10);
+        rect(770, 75, lenX, lenY, 10);
+        rect(900, 75, lenX, lenY, 10);
+        rect(1030, 75, lenX, lenY, 10);
+        rect(1160, 75, lenX, lenY, 10);
+        rect(1290, 75, lenX, lenY, 10);
 
         // Icons
+        image(power, 795, 80, 50, 50);
+        image(person, 925, 80, 50, 50);
+        image(people, 1055, 80, 50, 50);
+        image(location, 1185, 80, 50, 50);
+        image(settings, 1315, 80, 50, 50);
         
-
-
-
 
     }
 
     public void console()
     {
-        float wid1 = width / 15 - 37.5f;
-        float wid2 = width / 15 + 37.5f;
+        float wid1 = width / 22 - 50;
+        float wid2 = width / 22 + 50f;
 
-        float disX = 150;
-        float disY = height / 8 * 6f + 90;
+        float disX = 300;
+        float disY = height / 8 * 6f + 250;
         
         
     // PURPLE RADAR
-        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 220 && mouseY <= 332.5 )
+        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 590 && mouseY <= 690 )
         {   
             pushMatrix();
                 noFill();
                 //ellipse(disX, disY, 130, 130);
                 stroke(255, 0, 255);
-                radar00 = new Radar(this, disX, disY, 130);
+                radar00 = new Radar(this, disX, disY, 300);
                 radar00.render();
             popMatrix();
             
         }
     
     // YELLOW RADAR
-        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 357.5 && mouseY <= 432.5 )
+        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 715 && mouseY <= 815 )
         {   
             pushMatrix();
                 noFill();
                 //ellipse(disX, disY, 130, 130);
                 stroke(255, 255, 0);
-                radar11 = new Radar(this, disX, disY, 130);
+                radar11 = new Radar(this, disX, disY, 300);
                 radar11.render();
             popMatrix();
         
         }
     
     // BLUE RADAR
-        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 457.5 && mouseY <= 532.5 )
+        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 840 && mouseY <= 940 )
         {   
             pushMatrix();
                 noFill();
                 //ellipse(disX, disY, 130, 130);
                 stroke(0, 255, 255);
-                radar22 = new Radar(this, disX, disY, 130);
+                radar22 = new Radar(this, disX, disY, 300);
                 radar22.render();
             popMatrix();
             
