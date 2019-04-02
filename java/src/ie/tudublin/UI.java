@@ -225,15 +225,26 @@ public class UI extends PApplet
             noFill();
             stroke(0, 255, 255);
             strokeWeight(2);
-            polygon(6, 0, 0, 90);
+            polygon(6, 0, 0, 300);
 
             stroke(255);
             strokeWeight(0.5f);
-            polygon(6, 0, 0, 65);
-            polygon(6, 0, 0, 50);
-            polygon(6, 0, 0, 35);
+            polygon(6, 0, 0, 200);
+            polygon(6, 0, 0, 250);
+            polygon(6, 0, 0, 150);
 
         popMatrix();
+
+        // Attributes
+
+        stroke(255);
+        textSize(30);
+        text("Strength", 3130, 75);
+        text("Power", 3480, 75);
+        text("Speed", 2950, 370);
+        text("Sight", 3670, 370);
+        text("Balance", 3130, 670);
+        text("Agility", 3480, 670);
     }
 
     void polygon(int n, float cx, float cy, float r) {
@@ -302,7 +313,7 @@ public class UI extends PApplet
                 strokeWeight(2);
                     textSize(40);
                     text("Console", angleD * 10, height / 8 * 6 - 5);
-                        rect(angleD, height / 8 * 6, width / 3 - 150, 500, 10);
+                        rect(angleD, height / 8 * 6, width / 3 - 150, 490, 10);
                 stroke(255);
                 strokeWeight(2);
                 fill(255);
