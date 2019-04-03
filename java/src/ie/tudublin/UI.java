@@ -16,7 +16,7 @@ public class UI extends PApplet
     Radar radar, radar1, radar2;
     Radar radar00, radar11, radar22;
 
-    float t, r;
+    float t, r, m;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
 
 
@@ -68,12 +68,13 @@ public class UI extends PApplet
         // Sphere
         t = 0;
         r = 300;
+        m = 15;
     }
 
     public void draw()
     {
         background(0);
-        image(img, width / 3 + 155, height / 4 + 55, 970, 970);
+        
     
         //PURPLE
         stroke(255, 0, 255);
@@ -97,6 +98,7 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }*/
 
+
         soldiers();
         buttons();
         console();
@@ -107,7 +109,13 @@ public class UI extends PApplet
         //drawRing();
         drawSphere();
         // Areas
+
+        image(img, width / 3 + 155, height / 4 + 55, 970, 970);
+
+        
     }
+
+    
 
     public void soldiers()
     {
@@ -364,13 +372,34 @@ public class UI extends PApplet
     public void drawSphere()
     {
         float rotateX = 20 * radians(t += (TWO_PI / 360));
+        pushMatrix();
+        
+            translate(width / 2, height / 2);
+            rotateY(rotateX);
+            noFill();
+            stroke(0, 255, 255);
+            strokeWeight(1f);
+            sphere(r);
 
-        translate(width / 2, height / 2);
-        rotateY(rotateX);
-        noFill();
-        stroke(0, 255, 255);
-        strokeWeight(1f);
-        sphere(r);
+
+            fill(255, 0, 0);
+            stroke(255, 0, 0);
+            translate(r - 80, r - 100);
+            sphere(m);
+
+            fill(255, 0, 255);
+            stroke(255, 0, 255);
+            translate(70 , -250);
+            sphere(m);
+
+            fill(255, 255, 0);
+            stroke(255, 255, 0);
+            translate(- 585, 70);
+            sphere(m);
+
+        popMatrix();
+
+       
     }
 
     /*public void drawRing()
