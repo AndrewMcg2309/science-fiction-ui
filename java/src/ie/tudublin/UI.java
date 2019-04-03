@@ -1,5 +1,6 @@
-// Info 
-//      On Fullscreen - Dims (1535, y) roughly..
+// Andrew McGowan
+//      Sci-fi UI for OOP
+//                 
 
 package ie.tudublin;
 
@@ -73,30 +74,30 @@ public class UI extends PApplet
     {
         background(0);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
-        //b.render();
-
-        //mc.update();
-        //mc.render();
+    
+        //PURPLE
         stroke(255, 0, 255);
         radar.update();
         radar.render();
+
+        //YELLOW
         stroke(255, 255, 0);
         radar1.update();
         radar1.render();
-        stroke(0, 255, 255);
+
+        //RED
+        stroke(255, 0, 0);
         radar2.update();
         radar2.render();
 
         // Hover
         
-        
-        
-
         /*if (checkKey(LEFT))
         {
             System.out.println("Left arrow key pressed");
         }*/
 
+        soldiers();
         buttons();
         console();
         drawLeftMid();
@@ -106,9 +107,33 @@ public class UI extends PApplet
         //drawRing();
         drawSphere();
         // Areas
+    }
 
+    public void soldiers()
+    {
+        float lenI = 100;
         
-      
+        //Soldier 1
+        fill(255, 0, 255);
+        stroke(255, 0, 255);
+        ellipse(3000, 860, 120, 120);
+            image(person, 2950, 815, lenI, lenI);
+
+        //Soldier 2
+
+        fill(255, 255, 0);
+        stroke(255, 255, 0);
+        ellipse(3000, 1060, 120, 120);
+            image(person, 2950, 1015, lenI, lenI);
+        
+
+        //Soldier 3
+
+        fill(255, 50, 50);
+        stroke(255, 55, 55);
+        ellipse(3000, 1260, 120, 120);
+            image(person, 2950, 1215, lenI, lenI);
+    
     }
 
     public void buttons()
@@ -170,13 +195,13 @@ public class UI extends PApplet
         
         }
     
-    // BLUE RADAR
+    // RED RADAR
         if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 840 && mouseY <= 940 )
         {   
             pushMatrix();
                 noFill();
                 //ellipse(disX, disY, 130, 130);
-                stroke(0, 255, 255);
+                stroke(255, 50, 50);
                 radar22 = new Radar(this, disX, disY, 300);
                 radar22.render();
             popMatrix();
