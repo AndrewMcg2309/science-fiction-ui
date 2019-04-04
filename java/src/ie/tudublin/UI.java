@@ -4,23 +4,30 @@
 
 package ie.tudublin;
 
+import java.util.ArrayList;
+import javax.swing.text.TableView.TableRow;
 import processing.core.*;
+import processing.data.Table;
+
 
 public class UI extends PApplet
 {
     PImage img;
     PImage person, people, settings, power, location;
+    PImage sun;
 
     Button b;
     MovingCircle mc;
     Radar radar, radar1, radar2;
     Radar radar00, radar11, radar22;
 
-    float t, r, m;
+    float ring1, ring2, ring3, ring4;
+
+    float t, r, m, s;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
-
-
+    
     boolean[] keys = new boolean[1024]; 
+
 
     //Arc Details
     int AX = width / 2;
@@ -55,6 +62,8 @@ public class UI extends PApplet
         location = loadImage("location.png");
         settings = loadImage("settings.png");
         power = loadImage("power.png");
+
+        sun = loadImage("sun.jpg");
     }
 
     public void setup()
@@ -69,11 +78,22 @@ public class UI extends PApplet
         t = 0;
         r = 300;
         m = 15;
+        s = 100;
+
+        ring1 = 330;
+        ring2 = 310;
+        ring3 = 290;
+        ring4 = 270;
+
     }
+
 
     public void draw()
     {
         background(0);
+
+        text("x: "+mouseX+" y: "+mouseY, 30, 45);
+        
         
     
         //PURPLE
@@ -98,7 +118,6 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }*/
 
-
         soldiers();
         buttons();
         console();
@@ -106,12 +125,10 @@ public class UI extends PApplet
         drawArc();
         topRight();
         drawGrid();
-        //drawRing();
         drawSphere();
-        // Areas
-
+    
+        image(sun, 1100, 247, 390, 375);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
-
         
     }
 
@@ -120,28 +137,56 @@ public class UI extends PApplet
     public void soldiers()
     {
         float lenI = 100;
-        
+
+        float wid1 = 2900;
+        float wid2 = 800;
+
         //Soldier 1
+        noFill();
+        stroke(255);
+        rect(wid1, 760, wid2, 200, 50);
+
         fill(255, 0, 255);
         stroke(255, 0, 255);
         ellipse(3000, 860, 120, 120);
             image(person, 2950, 815, lenI, lenI);
+        
+            if(mouseX >= wid1 && mouseX <= (wid1 + wid2) && mouseY >= 760 && mouseY <= 960 )
+            {
+                line(50, 50, 1000, 1000);
+            }
 
         //Soldier 2
+        noFill();
+        stroke(255);
+        rect(wid1, 960, wid2, 200, 50);
 
         fill(255, 255, 0);
         stroke(255, 255, 0);
         ellipse(3000, 1060, 120, 120);
             image(person, 2950, 1015, lenI, lenI);
+
+            if(mouseX >= wid1 && mouseX <= (wid1 + wid2) && mouseY >= 960 && mouseY <= 1160 )
+            {
+                line(50, 50, 1000, 1000);
+            }
         
 
         //Soldier 3
+        noFill();
+        stroke(255);
+        rect(wid1, 1160, wid2, 200, 50);
 
         fill(255, 50, 50);
         stroke(255, 55, 55);
         ellipse(3000, 1260, 120, 120);
             image(person, 2950, 1215, lenI, lenI);
-    
+
+            if(mouseX >= wid1 && mouseX <= (wid1 + wid2) && mouseY >= 1160 && mouseY <= 1360 )
+            {
+                line(50, 50, 1000, 1000);
+            }
+    // Andrew smells
     }
 
     public void buttons()
@@ -372,8 +417,9 @@ public class UI extends PApplet
     public void drawSphere()
     {
         float rotateX = 20 * radians(t += (TWO_PI / 360));
-        pushMatrix();
         
+        pushMatrix();
+
             translate(width / 2, height / 2);
             rotateY(rotateX);
             noFill();
@@ -399,22 +445,32 @@ public class UI extends PApplet
 
         popMatrix();
 
-       
-    }
-
-    /*public void drawRing()
-    {
         pushMatrix();
-        float h = height / 2;
-        float w = width / 2;
-        
-        stroke(0, 255, 255);
-        noFill();
-        strokeWeight(2);
-        ellipse(w, h, 300, 300);
-        popMatrix();
-    }*/
 
-    
+            translate(1300, 450);
+            rotateY(rotateX);
+            stroke(204, 102, 0);
+            noFill();
+            sphere(s);
+
+        popMatrix();
+
+        pushMatrix();
+
+            translate(2500, 450);
+            rotateY(rotateX);
+            stroke(255, 155, 155);
+            noFill();
+            sphere(s - 30);
+
+            strokeWeight(3);
+                rotateX(HALF_PI-.60f);
+                ellipse(0, 0, ring1, ring1);
+                ellipse(0, 0, ring2, ring2);
+                ellipse(0, 0, ring3, ring3);
+                ellipse(0, 0, ring4, ring4);
+
+        popMatrix();       
+    }
 }
 
