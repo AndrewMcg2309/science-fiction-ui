@@ -28,6 +28,11 @@ public class UI extends PApplet
     
     boolean[] keys = new boolean[1024]; 
 
+    float N = 50;
+    float da = TWO_PI/N;
+    float radDot = 100;
+    PVector dotCircle = new PVector(422 , 1325);
+
 
     //Arc Details
     int AX = width / 2;
@@ -118,6 +123,7 @@ public class UI extends PApplet
             System.out.println("Left arrow key pressed");
         }*/
 
+        extraArc();
         soldiers();
         buttons();
         console();
@@ -133,7 +139,40 @@ public class UI extends PApplet
         
     }
 
-    
+    public void extraArc()
+    {
+        stroke(255);
+        strokeWeight(2);
+        smooth();
+        noFill();
+
+        ang1 += 1;
+        ang2 += 0.5f;
+
+        fill(0, 255, 255);
+        textSize(40);
+        text("91%", 385, 1330);
+        noFill();
+        
+        pushMatrix();
+
+            translate(370, 1280);
+            stroke(255);
+            arc(AX, AY, rad, rad, radians(-ang2), radians(-ang2+150));
+            arc(AX, AY, rad + 15, rad + 15, radians(ang2), radians(ang2+150));
+            arc(AX, AY, rad + 30, rad + 30, radians(-ang1), radians(-ang1+150));
+            
+        popMatrix();
+
+        pushMatrix();
+
+            for(float a = 0 ; a < TWO_PI ; a += da) 
+            {
+                ellipse(dotCircle.x + radDot * cos(a), dotCircle.y + radDot * sin(a), 5, 5);
+            }
+
+        popMatrix();
+    }
 
     public void soldiers()
     {
