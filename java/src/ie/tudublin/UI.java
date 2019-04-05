@@ -121,14 +121,15 @@ public class UI extends PApplet
         soldiers();
         buttons();
         console();
-        drawLeftMid();
         drawArc();
         topRight();
         drawGrid();
         drawSphere();
+        drawLeftMid();
     
         image(sun, 1100, 247, 390, 375);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
+        
         
     }
 
@@ -153,7 +154,14 @@ public class UI extends PApplet
         
             if(mouseX >= wid1 && mouseX <= (wid1 + wid2) && mouseY >= 760 && mouseY <= 960 )
             {
-                line(50, 50, 1000, 1000);
+                strokeWeight(4);
+
+                line(3229, 130, 3140, 361);
+                line(3140, 361, 3245, 555);
+                line(3245, 555, 3433, 487);
+                line(3433, 487, 3570, 360);
+                line(3570, 360, 3498, 115);
+                line(3498, 115, 3229, 130);
             }
 
         //Soldier 2
@@ -168,7 +176,14 @@ public class UI extends PApplet
 
             if(mouseX >= wid1 && mouseX <= (wid1 + wid2) && mouseY >= 960 && mouseY <= 1160 )
             {
-                line(50, 50, 1000, 1000);
+                strokeWeight(4);
+
+                line(3263, 189, 3094, 357);
+                line(3094, 357, 3222, 600);
+                line(3222, 600, 3454, 527);
+                line(3454, 527, 3582, 361);
+                line(3582, 361, 3462, 182);
+                line(3462, 182, 3263, 189);
             }
         
 
@@ -184,9 +199,15 @@ public class UI extends PApplet
 
             if(mouseX >= wid1 && mouseX <= (wid1 + wid2) && mouseY >= 1160 && mouseY <= 1360 )
             {
-                line(50, 50, 1000, 1000);
+                strokeWeight(4);
+
+                line(3268, 199, 3108, 362);
+                line(3108, 368, 3282, 496);
+                line(3282, 496, 3490, 586);
+                line(3490, 586, 3644, 360);
+                line(3644, 360, 3461, 185);
+                line(3461, 185, 3268, 199);
             }
-    // Andrew smells
     }
 
     public void buttons()
@@ -257,6 +278,9 @@ public class UI extends PApplet
                 stroke(255, 50, 50);
                 radar22 = new Radar(this, disX, disY, 300);
                 radar22.render();
+
+                fill(255, 0, 0);
+                ellipse(40, 40, 10, 10);
             popMatrix();
             
         }
@@ -274,7 +298,15 @@ public class UI extends PApplet
         strokeWeight(2);
         rect(frame, height / 4, 700, 450, 15);
 
-        // Three radars
+        // Enemies in radar
+        
+        stroke(255, 0, 0);
+        fill(255, 0, 0);
+        ellipse(160, 867, 5, 5);
+        ellipse(198, 876, 5, 5);
+        ellipse(195, 901, 5, 5);
+        ellipse(182, 862, 5, 5);
+
     }
 
 
@@ -323,6 +355,14 @@ public class UI extends PApplet
         text("Sight", 3670, 370);
         text("Balance", 3130, 670);
         text("Agility", 3480, 670);
+
+        stroke(255);
+        strokeWeight(0.7f);
+
+        line(3210, 100, 3510, 620);
+        line(3210, 620, 3510, 100);
+        line(3060, 360, 3660, 360);
+
     }
 
     void polygon(int n, float cx, float cy, float r) {
