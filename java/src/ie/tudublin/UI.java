@@ -145,6 +145,7 @@ public class UI extends PApplet
         //Soldier 1
         noFill();
         stroke(255);
+        strokeWeight(2);
         rect(wid1, 760, wid2, 200, 50);
 
         fill(255, 0, 255);
@@ -167,6 +168,7 @@ public class UI extends PApplet
         //Soldier 2
         noFill();
         stroke(255);
+        strokeWeight(2);
         rect(wid1, 960, wid2, 200, 50);
 
         fill(255, 255, 0);
@@ -190,6 +192,7 @@ public class UI extends PApplet
         //Soldier 3
         noFill();
         stroke(255);
+        strokeWeight(2);
         rect(wid1, 1160, wid2, 200, 50);
 
         fill(255, 50, 50);
@@ -306,6 +309,15 @@ public class UI extends PApplet
         ellipse(198, 876, 5, 5);
         ellipse(195, 901, 5, 5);
         ellipse(182, 862, 5, 5);
+
+        textSize(30);
+        stroke(255);
+        fill(255);
+        text("41°24'12.2 N 2°10'26.5 E ", 250,650);
+
+        text("123°69'2.6 N 2°98'75.562 E ", 250,770);
+
+        text("312°24'20.55 N 7°199'56.5 E ", 250,890);
 
     }
 
