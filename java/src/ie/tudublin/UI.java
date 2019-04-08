@@ -7,13 +7,17 @@ package ie.tudublin;
 import java.util.ArrayList;
 import javax.swing.text.TableView.TableRow;
 import processing.core.*;
-import processing.data.Table;
+import processing.data.*;
 import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 
 
 public class UI extends PApplet
 {
+    //Array List
+    ArrayList<Attributes> attributes = new ArrayList<Attributes>();
+    Table table;
+
     // Audio Input ( commms )
     public static int SAMPLE_RATE = 44100;
     public static int RESOLUTION = 16;
@@ -75,6 +79,7 @@ public class UI extends PApplet
     public void settings()
     {
         fullScreen(P3D, SPAN);
+        loadTable();
 
         // All images
         img = loadImage("circle.png");
@@ -88,6 +93,18 @@ public class UI extends PApplet
         // Audio 
         minim = new Minim(this);
         ai = minim.getLineIn(Minim.MONO, FRAME_SIZE, SAMPLE_RATE, RESOLUTION);
+    }
+
+    void loadTable()
+    {
+        table = loadTable("attributes.csv", "header");
+
+        for(processing.data.TableRow tr : table.rows())
+        {
+            Attributes p = new Attributes(tr);
+            attributes.add(p);
+            println(p.toString());
+        }
     }
 
     public void setup()
