@@ -8,31 +8,46 @@ import java.util.ArrayList;
 import javax.swing.text.TableView.TableRow;
 import processing.core.*;
 import processing.data.Table;
+import ddf.minim.AudioInput;
+import ddf.minim.Minim;
 
 
 public class UI extends PApplet
 {
+    // Audio Input ( commms )
+    public static int SAMPLE_RATE = 44100;
+    public static int RESOLUTION = 16;
+    public static int FRAME_SIZE = 100;
+    Minim minim;
+    AudioInput ai;
+
+    // Images
     PImage img;
     PImage person, people, settings, power, location;
     PImage sun;
 
     Button b;
-    MovingCircle mc;
+    //MovingCircle mc;
+
+    // Radarss
     Radar radar, radar1, radar2;
     Radar radar00, radar11, radar22;
 
+    // Loading Rings
     float ring1, ring2, ring3, ring4;
 
+    // All Spheres
     float t, r, m, s;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
     
+    // Boolean for Keys
     boolean[] keys = new boolean[1024]; 
 
+    // Rotating Arcs
     float N = 50;
     float da = TWO_PI/N;
     float radDot = 100;
-    PVector dotCircle = new PVector(422 , 1325);
-
+    PVector dotCircle = new PVector(322 , 220);
 
     //Arc Details
     int AX = width / 2;
@@ -41,10 +56,10 @@ public class UI extends PApplet
     int ang1 = 1;
     int ang2 = 1;
 
-    public void keyPressed()
+    /*public void keyPressed()
     {
-        keys[keyCode] = true;
-    }
+        
+    }*/
     
     public void keyReleased()
     {
@@ -61,14 +76,18 @@ public class UI extends PApplet
     {
         fullScreen(P3D, SPAN);
 
+        // All images
         img = loadImage("circle.png");
         people = loadImage("people.png");
         person = loadImage("person.png");
         location = loadImage("location.png");
         settings = loadImage("settings.png");
         power = loadImage("power.png");
-
         sun = loadImage("sun.jpg");
+
+        // Audio 
+        minim = new Minim(this);
+        ai = minim.getLineIn(Minim.MONO, FRAME_SIZE, SAMPLE_RATE, RESOLUTION);
     }
 
     public void setup()
@@ -99,6 +118,10 @@ public class UI extends PApplet
 
         text("x: "+mouseX+" y: "+mouseY, 30, 45);
         
+        if( keyPressed == true)
+        {
+            
+        }
         
     
         //PURPLE
@@ -120,7 +143,7 @@ public class UI extends PApplet
         
         /*if (checkKey(LEFT))
         {
-            System.out.println("Left arrow key pressed");
+            background(0);
         }*/
 
         extraArc();
@@ -135,9 +158,16 @@ public class UI extends PApplet
     
         image(sun, 1100, 247, 390, 375);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
-        
-        
     }
+
+    /*public void mousePressed()
+    {
+        if(mouseX > 900 && mouseX < 1000 && mouseY > 75 && mouseY < 135)
+        {
+            fill(255);
+            rect(200, 1000, 500, 500);
+        }
+    }*/
 
     public void extraArc()
     {
@@ -151,12 +181,12 @@ public class UI extends PApplet
 
         fill(0, 255, 255);
         textSize(40);
-        text("91%", 385, 1330);
+        text("91%", 285, 230);
         noFill();
         
         pushMatrix();
 
-            translate(370, 1280);
+            translate(270, 175);
             stroke(255);
             arc(AX, AY, rad, rad, radians(-ang2), radians(-ang2+150));
             arc(AX, AY, rad + 15, rad + 15, radians(ang2), radians(ang2+150));
@@ -323,8 +353,9 @@ public class UI extends PApplet
 
                 fill(255, 0, 0);
                 ellipse(40, 40, 10, 10);
+                
             popMatrix();
-            
+            fill(255);    
         }
 
         
