@@ -17,7 +17,7 @@ public class UI extends PApplet
     // Audio Input ( commms )
     public static int SAMPLE_RATE = 44100;
     public static int RESOLUTION = 16;
-    public static int FRAME_SIZE = 100;
+    public static int FRAME_SIZE = 500;
     Minim minim;
     AudioInput ai;
 
@@ -118,9 +118,17 @@ public class UI extends PApplet
 
         text("x: "+mouseX+" y: "+mouseY, 30, 45);
         
+
+        // Key Pressed for Audio
         if( keyPressed == true)
         {
-            
+            stroke(255);
+            float h = 1600;
+            for(int i = 0 ; i < ai.bufferSize() ; i++)
+            {
+                stroke(map(i, 0, FRAME_SIZE, 0, 255), 255, 255);
+                line(i, h, i, h + ai.left.get(i) * h);
+            } 
         }
         
     
