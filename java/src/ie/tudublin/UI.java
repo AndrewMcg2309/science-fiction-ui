@@ -13,6 +13,10 @@ import ddf.minim.Minim;
 
 public class UI extends PApplet
 {
+    // Heart rate monitor
+    PVector h1, h2, h3;
+    int heart;
+
     //Array List
     ArrayList<Attributes> attributes = new ArrayList<Attributes>();
     Table table;
@@ -77,6 +81,11 @@ public class UI extends PApplet
         // Audio 
         minim = new Minim(this);
         ai = minim.getLineIn(Minim.MONO, FRAME_SIZE, SAMPLE_RATE, RESOLUTION);
+
+        h1 = new PVector(3090, 860);
+        h2 = new PVector(3090, 1060);
+        h3 = new PVector(3090, 1260);
+        heart = 0;
     }
 
     void loadTable()
@@ -209,9 +218,52 @@ public class UI extends PApplet
         drawGrid();
         drawSphere();
         drawLeftMid();
-    
+        heartMonitor();
+
         image(sun, 1100, 252, 400, 369);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
+    }
+
+    public void heartMonitor()
+    {
+        stroke(255);
+        fill(255);
+
+        // Purple soldier
+        ellipse(h1.x, h1.y, 15, 15);
+        if(heart == 0)
+        {
+            h1.x += 3;
+        }
+        if(h1.x > 3640)
+        {
+            h1.x = 3090;
+        }
+
+        // Yellow Soldier
+        ellipse(h2.x, h2.y, 15, 15);
+        if(heart == 0)
+        {
+            h2.x += 3;
+        }
+        if(h2.x > 3640)
+        {
+            h2.x = 3090;
+        }
+
+        // Red Soldier
+        strokeWeight(1);
+        ellipse(h3.x, h3.y, 15, 15);
+        line(h3.x, h3.y, h3.x - 40, h3.y);
+        if(heart == 0)
+        {
+            h3.x += 3;
+        }
+        if(h3.x > 3640)
+        {
+            h3.x = 3090;
+        }
+          
     }
 
 
