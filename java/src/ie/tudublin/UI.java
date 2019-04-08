@@ -23,8 +23,10 @@ public class UI extends PApplet
     public static int FRAME_SIZE = 1125;
     Minim minim;
     AudioInput ai;
+
     // IMPORTANT - this will decide whats going to be above the sound bar
-    int COLOR_W = 0;
+    // 1 = purple soldier,, 2 = yellow soldier,, 3 = red, soldier,, 4 == ALL soldiers
+    int COLOR_W = 1;
 
     // Images
     PImage img;
@@ -139,25 +141,58 @@ public class UI extends PApplet
         pushMatrix();
         translate(50, 0);
 
-        // Key Pressed for Audio
-        if( keyPressed == true)
+        if(COLOR_W == 1)
         {
-            if(COLOR_W == 1)
+            fill(255, 0, 255);
+            stroke(255, 0, 255);
+            ellipse(530, 1500, 120,120);
+            image(person, 470, 1440, 120,120);
+            noFill();
+        }
+        else if(COLOR_W == 2)
             {
-                rect(50, 50, 400, 400);
-            }
-            else if(COLOR_W == 2)
-            {
-                rect(1500, 500, 500, 500);
+                fill(255, 255, 0);
+                stroke(255, 255, 0);
+                ellipse(530, 1500, 120,120);
+                image(person, 470, 1440, 120,120);
+                noFill();
             }
             else if(COLOR_W == 3)
             {
-                rect(1000, 1000, 500, 500);
+                fill(255, 50, 50);
+                stroke(255, 50, 50);
+                ellipse(530, 1500, 120,120);
+                image(person, 470, 1440, 120,120);
+                noFill();
             }
-            else if(COLOR_W == 4)
+            else if(COLOR_W ==4)
             {
-                rect(500, 500, 1000, 1000);
+                // 1
+                fill(255, 0, 255);
+                stroke(255, 0, 255);
+                ellipse(400, 1500, 120,120);
+                image(person, 340, 1440, 120,120);
+                noFill();
+
+                //2
+                fill(255, 255, 0);
+                stroke(255, 255, 0);
+                ellipse(530, 1500, 120,120);
+                image(person, 470, 1440, 120,120);
+                noFill();
+
+                //3
+                fill(255, 50, 50);
+                stroke(255, 50, 50);
+                ellipse(660, 1500, 120,120);
+                image(person, 600, 1440, 120,120);
+                noFill();
+
             }
+
+        // Key Pressed for Audio
+        if( keyPressed == true)
+        { 
             stroke(255);
             float h = 1900;
             for(int i = 0 ; i < ai.bufferSize() ; i++)
@@ -165,7 +200,6 @@ public class UI extends PApplet
                 stroke(map(i, 100, FRAME_SIZE, 0, 255), 255, 255);
                 line(i, h, i, h + ai.left.get(i) * h);
             } 
-
         }
         popMatrix();
         
@@ -212,36 +246,26 @@ public class UI extends PApplet
         // Buttons in top left
         if(mouseX > 900 && mouseX < 1000 && mouseY > 75 && mouseY < 135)
         {
-            fill(255);
-            rect(200, 1000, 500, 500);
             COLOR_W = 1;
         }
         
         if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
         {
-            fill(255);
-            rect(200, 1000, 500, 500);
             COLOR_W = 4;
         }
 
         // Icons on right of soldiers
 
-        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        if(mouseX > 2900 && mouseX < 3700 && mouseY > 760 && mouseY < 960)
         {
-            fill(255);
-            rect(200, 1000, 500, 500);
             COLOR_W = 1;
         }
-        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        if(mouseX > 2900 && mouseX < 3700 && mouseY > 960 && mouseY < 1160)
         {
-            fill(255);
-            rect(200, 1000, 500, 500);
             COLOR_W = 2;
         }
-        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        if(mouseX > 2900 && mouseX < 3700 && mouseY > 1160 && mouseY < 1360)
         {
-            fill(255);
-            rect(200, 1000, 500, 500);
             COLOR_W = 3;
         }
     }
