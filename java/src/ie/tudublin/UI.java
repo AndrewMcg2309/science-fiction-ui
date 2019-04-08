@@ -17,7 +17,7 @@ public class UI extends PApplet
     // Audio Input ( commms )
     public static int SAMPLE_RATE = 44100;
     public static int RESOLUTION = 16;
-    public static int FRAME_SIZE = 1000;
+    public static int FRAME_SIZE = 1125;
     Minim minim;
     AudioInput ai;
 
@@ -119,7 +119,7 @@ public class UI extends PApplet
         text("x: "+  mouseX + " y: " + mouseY, 30, 45);
         
         pushMatrix();
-        translate(100, 0);
+        translate(50, 0);
 
         // Key Pressed for Audio
         if( keyPressed == true)
@@ -167,7 +167,7 @@ public class UI extends PApplet
         drawSphere();
         drawLeftMid();
     
-        image(sun, 1100, 247, 390, 375);
+        image(sun, 1100, 252, 400, 369);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
     }
 
