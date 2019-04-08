@@ -229,7 +229,6 @@ public class UI extends PApplet
         extraArc();
         soldiers();
         buttons();
-        console();
         drawArc();
         topRight();
         drawGrid();
@@ -312,6 +311,9 @@ public class UI extends PApplet
         float wid1 = 2900;
         float wid2 = 800;
 
+        float disX = 2200;
+        float disY = height / 8 * 6f + 250; 
+
         //Soldier 1
         noFill();
         stroke(255);
@@ -333,6 +335,14 @@ public class UI extends PApplet
                 line(3433, 487, 3570, 360);
                 line(3570, 360, 3498, 115);
                 line(3498, 115, 3229, 130);
+
+                pushMatrix();
+                    noFill();
+                    //ellipse(disX, disY, 130, 130);
+                    stroke(255, 0, 255);
+                    radar00 = new Radar(this, disX, disY, 300);
+                    radar00.render();
+                popMatrix();
             }
 
         //Soldier 2
@@ -356,6 +366,14 @@ public class UI extends PApplet
                 line(3454, 527, 3582, 361);
                 line(3582, 361, 3462, 182);
                 line(3462, 182, 3263, 189);
+
+                pushMatrix();
+                    noFill();
+                    //ellipse(disX, disY, 130, 130);
+                    stroke(255, 255, 0);
+                    radar11 = new Radar(this, disX, disY, 300);
+                    radar11.render();
+                popMatrix();
             }
         
 
@@ -380,6 +398,17 @@ public class UI extends PApplet
                 line(3490, 586, 3644, 360);
                 line(3644, 360, 3461, 185);
                 line(3461, 185, 3268, 199);
+
+                pushMatrix();
+                    noFill();
+                    //ellipse(disX, disY, 130, 130);
+                    stroke(255, 50, 50);
+                    radar22 = new Radar(this, disX, disY, 300);
+                    radar22.render();
+
+                    fill(255, 0, 0);
+                    ellipse(40, 40, 10, 10);
+                popMatrix();
             }
     }
 
@@ -406,63 +435,6 @@ public class UI extends PApplet
         
 
     }
-
-    public void console()
-    {
-        float wid1 = width / 22 - 50;
-        float wid2 = width / 22 + 50f;
-
-        float disX = 300;
-        float disY = height / 8 * 6f + 250;
-        
-        
-    // PURPLE RADAR
-        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 590 && mouseY <= 690 )
-        {   
-            pushMatrix();
-                noFill();
-                //ellipse(disX, disY, 130, 130);
-                stroke(255, 0, 255);
-                radar00 = new Radar(this, disX, disY, 300);
-                radar00.render();
-            popMatrix();
-            
-        }
-    
-    // YELLOW RADAR
-        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 715 && mouseY <= 815 )
-        {   
-            pushMatrix();
-                noFill();
-                //ellipse(disX, disY, 130, 130);
-                stroke(255, 255, 0);
-                radar11 = new Radar(this, disX, disY, 300);
-                radar11.render();
-            popMatrix();
-        
-        }
-    
-    // RED RADAR
-        if(mouseX >= wid1 && mouseX <= wid2 && mouseY >= 840 && mouseY <= 940 )
-        {   
-            pushMatrix();
-                noFill();
-                //ellipse(disX, disY, 130, 130);
-                stroke(255, 50, 50);
-                radar22 = new Radar(this, disX, disY, 300);
-                radar22.render();
-
-                fill(255, 0, 0);
-                ellipse(40, 40, 10, 10);
-                
-            popMatrix();
-            fill(255);    
-        }
-
-        
-        
-    }
-
 
     public void drawLeftMid()
     {
