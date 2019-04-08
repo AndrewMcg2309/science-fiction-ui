@@ -5,7 +5,6 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-import javax.swing.text.TableView.TableRow;
 import processing.core.*;
 import processing.data.*;
 import ddf.minim.AudioInput;
@@ -24,6 +23,8 @@ public class UI extends PApplet
     public static int FRAME_SIZE = 1125;
     Minim minim;
     AudioInput ai;
+    // IMPORTANT - this will decide whats going to be above the sound bar
+    int COLOR_W = 0;
 
     // Images
     PImage img;
@@ -60,10 +61,10 @@ public class UI extends PApplet
     int ang1 = 1;
     int ang2 = 1;
 
-    /*public void keyPressed()
+    public void keyPressed()
     {
         
-    }*/
+    }
     
     public void keyReleased()
     {
@@ -141,6 +142,22 @@ public class UI extends PApplet
         // Key Pressed for Audio
         if( keyPressed == true)
         {
+            if(COLOR_W == 1)
+            {
+                rect(50, 50, 400, 400);
+            }
+            else if(COLOR_W == 2)
+            {
+                rect(1500, 500, 500, 500);
+            }
+            else if(COLOR_W == 3)
+            {
+                rect(1000, 1000, 500, 500);
+            }
+            else if(COLOR_W == 4)
+            {
+                rect(500, 500, 1000, 1000);
+            }
             stroke(255);
             float h = 1900;
             for(int i = 0 ; i < ai.bufferSize() ; i++)
@@ -148,6 +165,7 @@ public class UI extends PApplet
                 stroke(map(i, 100, FRAME_SIZE, 0, 255), 255, 255);
                 line(i, h, i, h + ai.left.get(i) * h);
             } 
+
         }
         popMatrix();
         
@@ -167,7 +185,7 @@ public class UI extends PApplet
         radar2.update();
         radar2.render();
 
-        // Hover
+        // hover
         
         /*if (checkKey(LEFT))
         {
@@ -188,14 +206,45 @@ public class UI extends PApplet
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
     }
 
-    /*public void mousePressed()
+
+    public void mousePressed()
     {
+        // Buttons in top left
         if(mouseX > 900 && mouseX < 1000 && mouseY > 75 && mouseY < 135)
         {
             fill(255);
             rect(200, 1000, 500, 500);
+            COLOR_W = 1;
         }
-    }*/
+        
+        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        {
+            fill(255);
+            rect(200, 1000, 500, 500);
+            COLOR_W = 4;
+        }
+
+        // Icons on right of soldiers
+
+        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        {
+            fill(255);
+            rect(200, 1000, 500, 500);
+            COLOR_W = 1;
+        }
+        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        {
+            fill(255);
+            rect(200, 1000, 500, 500);
+            COLOR_W = 2;
+        }
+        if(mouseX > 1030 && mouseX < 1130 && mouseY > 75 && mouseY < 135)
+        {
+            fill(255);
+            rect(200, 1000, 500, 500);
+            COLOR_W = 3;
+        }
+    }
 
     public void extraArc()
     {
