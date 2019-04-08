@@ -529,7 +529,6 @@ public class UI extends PApplet
         popMatrix();
 
         // Attributes
-
         stroke(255);
         textSize(30);
         text("Strength", 3130, 75);
@@ -548,6 +547,8 @@ public class UI extends PApplet
 
     }
 
+
+    // Polygon for attributes in thop right corner
     void polygon(int n, float cx, float cy, float r) {
         float angle = 360.0f / n;
       
@@ -613,8 +614,8 @@ public class UI extends PApplet
                 stroke(0, 255, 255);
                 strokeWeight(2);
                     textSize(40);
-                    text("Console", angleD * 10, height / 8 * 6 - 5);
-                        rect(angleD, height / 8 * 6, width / 3 - 150, 490, 10);
+                    text("Comms", angleD * 10, height / 8 * 6 - 5);
+                        rect(angleD, height / 8 * 6, width / 3 - 150, 490, 150);
                 stroke(255);
                 strokeWeight(2);
                 fill(255);
@@ -641,6 +642,7 @@ public class UI extends PApplet
     {
         float rotateX = 20 * radians(t += (TWO_PI / 360));
         
+        // Main Planet
         pushMatrix();
 
             translate(width / 2, height / 2);
@@ -650,7 +652,7 @@ public class UI extends PApplet
             strokeWeight(1f);
             sphere(r);
 
-
+            // Soldier Locations on planet
             fill(255, 0, 0);
             stroke(255, 0, 0);
             translate(r - 80, r - 100);
@@ -668,6 +670,7 @@ public class UI extends PApplet
 
         popMatrix();
 
+        // Sun
         pushMatrix();
 
             translate(1300, 450);
@@ -678,6 +681,7 @@ public class UI extends PApplet
 
         popMatrix();
 
+        // Ringed Planet
         pushMatrix();
 
             translate(2500, 450);
