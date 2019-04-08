@@ -1,3 +1,5 @@
+// Upload a CSV file with the attributes of the soldiers
+
 package ie.tudublin;
 
 import processing.data.TableRow;

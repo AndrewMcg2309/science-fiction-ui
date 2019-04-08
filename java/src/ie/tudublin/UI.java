@@ -33,9 +33,6 @@ public class UI extends PApplet
     PImage person, people, settings, power, location;
     PImage sun;
 
-    Button b;
-    //MovingCircle mc;
-
     // Radarss
     Radar radar, radar1, radar2;
     Radar radar00, radar11, radar22;
@@ -62,22 +59,6 @@ public class UI extends PApplet
     int rad = 300;
     int ang1 = 1;
     int ang2 = 1;
-
-    public void keyPressed()
-    {
-        
-    }
-    
-    public void keyReleased()
-    {
-        keys[keyCode] = true;
-    }
-
-    public boolean checkKey(int c)
-    {
-        return keys[c] || keys [Character.toUpperCase(c)];
-    }
-
 
     public void settings()
     {
@@ -124,6 +105,7 @@ public class UI extends PApplet
         m = 15;
         s = 100;
 
+        // Rings
         ring1 = 330;
         ring2 = 310;
         ring3 = 290;
@@ -218,13 +200,6 @@ public class UI extends PApplet
         stroke(255, 0, 0);
         radar2.update();
         radar2.render();
-
-        // hover
-        
-        /*if (checkKey(LEFT))
-        {
-            background(0);
-        }*/
 
         extraArc();
         soldiers();
@@ -672,4 +647,3 @@ public class UI extends PApplet
         popMatrix();       
     }
 }
-
