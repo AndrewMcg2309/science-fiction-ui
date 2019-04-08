@@ -228,12 +228,35 @@ public class UI extends PApplet
     {
         stroke(255);
         fill(255);
+        float radius = 25;
+        smooth();
+
+        strokeWeight(0.7f);
+        line(3090, 860, 3640, 860);
+        line(3090, 1060, 3640, 1060);
+        line(3090, 1260, 3640, 1260);
+
+        strokeWeight(1);
 
         // Purple soldier
-        ellipse(h1.x, h1.y, 15, 15);
+        stroke(0, 255, 0);
+        fill(0, 255, 0);
+        ellipse(h1.x, h1.y, radius, radius);
         if(heart == 0)
         {
-            h1.x += 3;
+            h1.x += 6;
+        }
+        if(h1.x > 3300 && h1.x < 3340)
+        {
+            h1.y -= 9;
+        }
+        if(h1.x > 3340 && h1.x < 3420)
+        {
+            h1.y +=9;
+        }
+        if(h1.x > 3420 && h1.x < 3465)
+        {
+            h1.y -= 9;
         }
         if(h1.x > 3640)
         {
@@ -241,10 +264,24 @@ public class UI extends PApplet
         }
 
         // Yellow Soldier
-        ellipse(h2.x, h2.y, 15, 15);
+        stroke(0, 255, 0);
+        fill(0, 255, 0);
+        ellipse(h2.x, h2.y, radius, radius);
         if(heart == 0)
         {
-            h2.x += 3;
+            h2.x += 6;
+        }
+        if(h2.x > 3300 && h2.x < 3340)
+        {
+            h2.y -= 9;
+        }
+        if(h2.x > 3340 && h2.x < 3420)
+        {
+            h2.y +=9;
+        }
+        if(h2.x > 3420 && h2.x < 3465)
+        {
+            h2.y -= 9;
         }
         if(h2.x > 3640)
         {
@@ -253,17 +290,20 @@ public class UI extends PApplet
 
         // Red Soldier
         strokeWeight(1);
-        ellipse(h3.x, h3.y, 15, 15);
-        line(h3.x, h3.y, h3.x - 40, h3.y);
+        stroke(255, 0, 0);
+        fill(255, 0, 0);
+        ellipse(h3.x, h3.y, radius, radius);
+
         if(heart == 0)
         {
-            h3.x += 3;
+            h3.x += 6;
         }
         if(h3.x > 3640)
         {
             h3.x = 3090;
         }
           
+        stroke(255);
     }
 
 
