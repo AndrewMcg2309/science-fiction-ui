@@ -66,6 +66,10 @@ public class UI extends PApplet
     String Conor = "70--98--80--88--95--70";
     String Niall = "68--88--81--97--60--90";
 
+    String location1 = "41°24'12.2 N 2°10'26.5 E ";
+    String location2 = "123°69'2.6 N 2°98'75.562 E ";
+    String location3 = "312°24'20.55 N 7°199'56.5 E ";
+
 
     public void settings()
     {
@@ -233,9 +237,23 @@ public class UI extends PApplet
         drawSphere();
         drawLeftMid();
         heartMonitor();
+        drawDetails();
+
 
         image(sun, 1100, 252, 400, 369);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
+    }
+
+    public void drawDetails()
+    {
+        stroke(255);
+        fill(255);
+        textSize(30);
+        text("Rank: ", 3080, 1650);
+        text("Name: ", 3080, 1750);
+        text("Attrs: ", 3080, 1850);
+        text("ID: ", 3080, 1950);
+        text("Status: ", 3080, 2050);
     }
 
     public void heartMonitor()
@@ -400,6 +418,7 @@ public class UI extends PApplet
         stroke(255);
         strokeWeight(2);
         rect(wid1, 760, wid2, 200, 50);
+        textSize(30);
 
         fill(255, 0, 255);
         stroke(255, 0, 255);
@@ -424,8 +443,16 @@ public class UI extends PApplet
                     radar00 = new Radar(this, disX, disY, 300);
                     radar00.render();
                 popMatrix();
-                text(David, 2500, 1900);
-                
+
+                fill(0, 255, 255);
+                text("Captain", 3200, 1650);
+                text("David Mulally", 3200, 1750);
+                text(David, 3200, 1850);
+                text("234-FF-J889", 3200, 1950);
+                fill(0, 255, 0);
+                text("Online", 3200, 2050);
+
+                text(location1, 2000, 2056);
             }
 
         //Soldier 2
@@ -458,7 +485,15 @@ public class UI extends PApplet
                     radar11.render();
                 popMatrix();
 
-                
+                fill(0, 255, 255);
+                text("Corporal", 3200, 1650);
+                text("Conor Dwyer", 3200, 1750);
+                text(Conor, 3200, 1850);
+                text("444-UF-J112", 3200, 1950);
+                fill(0, 255, 0);
+                text("Online", 3200, 2050);
+
+                text(location2, 2000, 2056);
             }
         
 
@@ -494,6 +529,16 @@ public class UI extends PApplet
                     fill(255, 0, 0);
                     ellipse(40, 40, 10, 10);
                 popMatrix();
+
+                fill(0, 255, 255);
+                text("Corproal", 3200, 1650);
+                text("Niall Lee", 3200, 1750);
+                text(Niall, 3200, 1850);
+                text("999-FF-Q234", 3200, 1950);
+                fill(255, 0, 0);
+                text("Unresponsive", 3200, 2050);
+
+                text(location3, 2000, 2056);
             }
     }
 
@@ -541,12 +586,11 @@ public class UI extends PApplet
         textSize(30);
         stroke(255);
         fill(255);
-        text("41°24'12.2 N 2°10'26.5 E ", 250,650);
+        text(location1, 250,650);
 
-        text("123°69'2.6 N 2°98'75.562 E ", 250,770);
+        text(location2, 250,770);
 
-        text("312°24'20.55 N 7°199'56.5 E ", 250,890);
-
+        text(location3, 250,890);
     }
 
 
