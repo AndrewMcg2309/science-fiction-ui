@@ -259,6 +259,9 @@ public class UI extends PApplet
         text("Attrs: ", 3080, 1850);
         text("ID: ", 3080, 1950);
         text("Status: ", 3080, 2050);
+
+        text("Logs", 2670, 1650);
+        line(2650, 1660, 2755, 1660);
     }
 
     public void heartMonitor()
@@ -378,6 +381,11 @@ public class UI extends PApplet
         {
             m = 30;
         }
+
+        if(mouseX > 1290 && mouseX < 1390 && mouseY > 75 && mouseY < 135)
+        {
+            m = 0;
+        }
     }
 
     public void extraArc()
@@ -466,6 +474,11 @@ public class UI extends PApplet
                 fill(0, 255, 255);
 
                 text(location1, 2000, 2056);
+
+                text("Day 1 : Hello, cant beli..", 2510, 1750);
+                text("Day 2 : Still no sign of..", 2510, 1850);
+                text("Day 3 : Unsuccessful day..", 2510, 1950);
+                text("Day 4 : I have been hear..", 2510, 2050);
             }
 
         //Soldier 2
@@ -508,6 +521,11 @@ public class UI extends PApplet
                 fill(0, 255, 255);
 
                 text(location2, 2000, 2056);
+
+                text("Day 1 : First day down he..", 2510, 1750);
+                text("Day 2 : No a sound after d..", 2510, 1850);
+                text("Day 3 : Lost comms but I a..", 2510, 1950);
+                text("Day 4 : I fear no life is o..", 2510, 2050);
             }
         
 
@@ -554,6 +572,10 @@ public class UI extends PApplet
                 fill(0, 255, 255);
 
                 text(location3, 2000, 2056);
+
+                text("Day 1 : Morning team, I hav..", 2510, 1750);
+                text("Day 2 : Im sure I heard nois..", 2510, 1850);
+                text("Day 3 : Noises now waking me..", 2510, 1950);
             }
     }
 
