@@ -1,7 +1,6 @@
 // Andrew McGowan
 //      Sci-fi UI for OOP
-//                 
-
+                 
 package ie.tudublin;
 
 import java.util.ArrayList;
@@ -9,7 +8,6 @@ import processing.core.*;
 import processing.data.*;
 import ddf.minim.AudioInput;
 import ddf.minim.Minim;
-
 
 public class UI extends PApplet
 {
@@ -63,6 +61,11 @@ public class UI extends PApplet
     int rad = 300;
     int ang1 = 1;
     int ang2 = 1;
+
+    String David = "90--70--95--77--80--55";
+    String Conor = "70--98--80--88--95--70";
+    String Niall = "68--88--81--97--60--90";
+
 
     public void settings()
     {
@@ -126,7 +129,18 @@ public class UI extends PApplet
     public void draw()
     {
         background(0);
+        stroke(0, 255, 255);
+        strokeWeight(0.6f);
 
+        line(mouseX, 0, mouseX, height);
+        line(0, mouseY, width, mouseY);
+        noFill();
+        if(mousePressed == true)
+        {
+            fill(255);
+            ellipse(mouseX, mouseY, 30, 30);
+        }
+        ellipse(mouseX, mouseY, 30, 30);
         text("x: "+  mouseX + " y: " + mouseY, 30, 45);
         
         pushMatrix();
@@ -410,6 +424,8 @@ public class UI extends PApplet
                     radar00 = new Radar(this, disX, disY, 300);
                     radar00.render();
                 popMatrix();
+                text(David, 2500, 1900);
+                
             }
 
         //Soldier 2
@@ -441,6 +457,8 @@ public class UI extends PApplet
                     radar11 = new Radar(this, disX, disY, 300);
                     radar11.render();
                 popMatrix();
+
+                
             }
         
 
