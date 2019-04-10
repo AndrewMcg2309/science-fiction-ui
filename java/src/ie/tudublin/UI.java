@@ -62,13 +62,16 @@ public class UI extends PApplet
     int ang1 = 1;
     int ang2 = 1;
 
+    // Details
     String David = "90--70--95--77--80--55";
     String Conor = "70--98--80--88--95--70";
     String Niall = "68--88--81--97--60--90";
-
     String location1 = "41°24'12.2 N 2°10'26.5 E ";
     String location2 = "123°69'2.6 N 2°98'75.562 E ";
     String location3 = "312°24'20.55 N 7°199'56.5 E ";
+
+    // For changing the size of locations
+    int change;
 
 
     public void settings()
@@ -118,7 +121,7 @@ public class UI extends PApplet
         // Sphere
         t = 0;
         r = 300;
-        m = 15;
+        m = 0;
         s = 100;
 
         // Rings
@@ -126,6 +129,8 @@ public class UI extends PApplet
         ring2 = 310;
         ring3 = 290;
         ring4 = 270;
+
+        change = 0;
 
     }
 
@@ -366,6 +371,13 @@ public class UI extends PApplet
         {
             COLOR_W = 3;
         }
+
+
+        // For location button
+        if(mouseX > 1160 && mouseX < 1260 && mouseY > 75 && mouseY < 135)
+        {
+            m = 30;
+        }
     }
 
     public void extraArc()
@@ -451,6 +463,7 @@ public class UI extends PApplet
                 text("234-FF-J889", 3200, 1950);
                 fill(0, 255, 0);
                 text("Online", 3200, 2050);
+                fill(0, 255, 255);
 
                 text(location1, 2000, 2056);
             }
@@ -492,6 +505,7 @@ public class UI extends PApplet
                 text("444-UF-J112", 3200, 1950);
                 fill(0, 255, 0);
                 text("Online", 3200, 2050);
+                fill(0, 255, 255);
 
                 text(location2, 2000, 2056);
             }
@@ -537,6 +551,7 @@ public class UI extends PApplet
                 text("999-FF-Q234", 3200, 1950);
                 fill(255, 0, 0);
                 text("Unresponsive", 3200, 2050);
+                fill(0, 255, 255);
 
                 text(location3, 2000, 2056);
             }
