@@ -42,9 +42,10 @@ public class UI extends PApplet
     // Loading Rings
     float ring1, ring2, ring3, ring4;
 
-    // All Spheres
+    // All Spheres , Polymorphism
     float t, r, m, s;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
+    Sphere sunObject = new Sun(80, 20 * radians(t += (TWO_PI / 360)));
     
     // Boolean for Keys
     boolean[] keys = new boolean[1024]; 
@@ -275,6 +276,11 @@ public class UI extends PApplet
         line(3090, 860, 3640, 860);
         line(3090, 1060, 3640, 1060);
         line(3090, 1260, 3640, 1260);
+
+        textSize(17);
+        text("67 bpm", 3558, 920);
+        text("64 bpm", 3558, 1120);
+        text("0 bpm", 3558, 1320);
 
         strokeWeight(1);
 
@@ -774,6 +780,12 @@ public class UI extends PApplet
         line(width / 5 * 4 - (bigF / 2 ) - (bigF * 2) ,height - frame - bigF / 2, width / 5 * 4 - (bigF / 2 ) - (bigF * 2) - bigF /2, height - frame);
         line(width / 5 * 4 - (bigF / 2 ) - (bigF * 2) - bigF /2, height - frame, width / 2, height - frame);
             ellipse(width / 2, height - frame, radius, radius);
+
+                ellipse(width / 2, height - frame * 6, radius, radius);
+            line(width / 2, height - frame * 6, width /2, 1700);
+            line(width /2, 1700, width / 2 + 90, 1600);
+            line(width / 2 + 90, 1600, 3700, 1600);
+                ellipse(3700, 1600, radius, radius);
     }
 
     public void drawSphere()

@@ -14,7 +14,10 @@ public class Sphere extends PApplet
         rotate = r;
     }
 
-    void update()
+    public Sphere(String name) {
+	}
+
+	void update()
     {
         sphereSize = 100;
         rotate = 20 * radians(t += (TWO_PI / 360));
