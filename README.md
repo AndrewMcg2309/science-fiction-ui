@@ -39,7 +39,8 @@ This is *emphasis*
 I used a global variable 'int COLOR_W' which was then used in an if statement to make the given changes. 
 
 ## Interactive ( Floating )
-
+![An image](images/float.PNG)
+- When tou float over the frames on the right / midde you will get the attributes and details of each solider.
 
 ## PVectors
 
