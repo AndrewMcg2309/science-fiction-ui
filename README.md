@@ -6,9 +6,12 @@ Student Number: C16470866
 
 # Description of the assignment
 
-My User Interface is a Sci-Fi control panel.
+My User Interface is a Sci-Fi control panel. My idea came from Prometheus, when they go down to a desolate planet and 3 people stay up in the ship monitoring them. 
+Mine is slightely different as it is 3 people, on different parts of the planet. 
 
 # Instructions
+To UI is very simple to use. Simply hover over the 3 idividuals for their information. To make contact with them simply hold down the 'space bar' after clicking on their icons. The icon will change when you click on their icon. 
+The buttons on the top are to either communicate with 1 person or 3 people. The second last icon is to show you the location of each individual on the planet. The settings button resets everything.
 
 # How it works
 
@@ -18,11 +21,26 @@ My User Interface is a Sci-Fi control panel.
 
 This is *emphasis*
 
-This is a bulleted list
+## CSV File
+- The CSV file I used is Attributes.csv, whish contained the level of strengh etc. of the soldiers.
+- The class Attributes.java is where get the details and get their values as local variables.
+- In UI.java I load the table into an aray list called "attributes". I load and print the details in the same function ( void loadTable() ).
 
-- Item
-- Item
+## Interactive ( Buttons )
+- There are 8 buttons in my UI
+![An image](images/buttons.png)
 
+## Interactive ( Floating )
+
+## PVectors
+
+## Transforms
+
+## Polymorphism
+
+## Abstract Classes
+
+## Interfaces
 This is a numbered list
 
 1. Item
