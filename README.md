@@ -28,7 +28,7 @@ This is *emphasis*
 
 ## Interactive ( Buttons )
 - There are 8 buttons in my UI
-![An image](images/buttons.png)
+![An image](images/buttons.PNG)
 
 ## Interactive ( Floating )
 
