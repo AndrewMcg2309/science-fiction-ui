@@ -93,6 +93,7 @@ public class UI extends PApplet
         minim = new Minim(this);
         ai = minim.getLineIn(Minim.MONO, FRAME_SIZE, SAMPLE_RATE, RESOLUTION);
 
+        // Heart rate
         h1 = new PVector(3090, 860);
         h2 = new PVector(3090, 1060);
         h3 = new PVector(3090, 1260);
@@ -142,6 +143,7 @@ public class UI extends PApplet
         stroke(0, 255, 255);
         strokeWeight(0.6f);
 
+        // Lines following mouse w/ circle
         line(mouseX, 0, mouseX, height);
         line(0, mouseY, width, mouseY);
         noFill();
@@ -153,9 +155,9 @@ public class UI extends PApplet
         ellipse(mouseX, mouseY, 30, 30);
         text("x: "+  mouseX + " y: " + mouseY, 30, 45);
         
+        
         pushMatrix();
         translate(50, 0);
-
         if(COLOR_W == 1)
         {
             fill(255, 0, 255);
@@ -245,7 +247,6 @@ public class UI extends PApplet
         heartMonitor();
         drawDetails();
 
-
         image(sun, 1100, 252, 400, 369);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
     }
@@ -269,7 +270,7 @@ public class UI extends PApplet
     {
         stroke(255);
         fill(255);
-        float radius = 25;
+        float radius = 17;
         smooth();
 
         strokeWeight(0.7f);
