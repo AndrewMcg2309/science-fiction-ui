@@ -6,11 +6,15 @@ Student Number: C16470866
 
 # Description of the assignment
 
-My User Interface is a Sci-Fi control panel.
+My User Interface is a Sci-Fi control panel. My idea came from Prometheus, when they go down to a desolate planet and 3 people stay up in the ship monitoring them. 
+Mine is slightely different as it is 3 people, on different parts of the planet. 
 
 # Instructions
+To UI is very simple to use. Simply hover over the 3 idividuals for their information. To make contact with them simply hold down the 'space bar' after clicking on their icons. The icon will change when you click on their icon. 
+The buttons on the top are to either communicate with 1 person or 3 people. The second last icon is to show you the location of each individual on the planet. The settings button resets everything.
 
 # How it works
+
 
 # What I am most proud of in the assignment
 
