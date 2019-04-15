@@ -21,11 +21,26 @@ The buttons on the top are to either communicate with 1 person or 3 people. The 
 
 This is *emphasis*
 
-# CSV File
+## CSV File
 - The CSV file I used is Attributes.csv, whish contained the level of strengh etc. of the soldiers.
 - The class Attributes.java is where get the details and get their values as local variables.
 - In UI.java I load the table into an aray list called "attributes". I load and print the details in the same function ( void loadTable() ).
 
+## Interactive ( Buttons )
+- There are 8 buttons in my UI
+![An image](images/buttons.png)
+
+## Interactive ( Floating )
+
+## PVectors
+
+## Transforms
+
+## Polymorphism
+
+## Abstract Classes
+
+## Interfaces
 This is a numbered list
 
 1. Item
