@@ -35,7 +35,25 @@ This is *emphasis*
 - Settings Icon - Reset Buttons
 ![An image](images/buttons2.PNG)
 - When you click one of these 3 frames you begin to communicate with that one person
+```Java
+ // IN DRAW
+ if(COLOR_W == 1)
+        {
+            fill(255, 0, 255);
+            stroke(255, 0, 255);
+            ellipse(530, 1500, 120,120);
+            image(person, 470, 1440, 120,120);
+            noFill();
+        }
 
+public void mousePressed()
+{
+        if(mouseX > 900 && mouseX < 1000 && mouseY > 75 && mouseY < 135)
+        {
+            COLOR_W = 1;
+        }
+}
+```
 I used a global variable 'int COLOR_W' which was then used in an if statement to make the given changes. 
 
 ## Interactive ( Floating )
