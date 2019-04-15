@@ -29,8 +29,17 @@ This is *emphasis*
 ## Interactive ( Buttons )
 - There are 8 buttons in my UI
 ![An image](images/buttons.PNG)
+- Person Icon = Communicate with one person
+- People Icon = Communicate with all three people
+- Location Icon = Show where they are on the planet 
+- SEttings Icon - Reset Buttons
+![An image](images/buttons2.PNG)
+- When you click one of these 3 frames you begin to communicate with that one person
+
+I used a global variable 'int COLOR_W' which was then used in an if statement to make the given changes. 
 
 ## Interactive ( Floating )
+
 
 ## PVectors
 
