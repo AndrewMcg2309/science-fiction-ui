@@ -32,7 +32,7 @@ This is *emphasis*
 - Person Icon = Communicate with one person
 - People Icon = Communicate with all three people
 - Location Icon = Show where they are on the planet 
-- SEttings Icon - Reset Buttons
+- Settings Icon - Reset Buttons
 ![An image](images/buttons2.PNG)
 - When you click one of these 3 frames you begin to communicate with that one person
 
@@ -43,7 +43,33 @@ I used a global variable 'int COLOR_W' which was then used in an if statement to
 - When tou float over the frames on the right / midde you will get the attributes and details of each solider.
 
 ## PVectors
-
+- Below is the code I used for the heart beat monitor. I have a global variable for this PVector.
+- It is coded to change at certain X distances. When it hits that x distance its y will change.
+```Java
+ stroke(0, 255, 0);
+ fill(0, 255, 0);
+ ellipse(h1.x, h1.y, radius, radius);
+        if(heart == 0)
+        {
+            h1.x += 6;
+        }
+        if(h1.x > 3300 && h1.x < 3340)
+        {
+            h1.y -= 9;
+        }
+        if(h1.x > 3340 && h1.x < 3420)
+        {
+            h1.y +=9;
+        }
+        if(h1.x > 3420 && h1.x < 3465)
+        {
+            h1.y -= 9;
+        }
+        if(h1.x > 3640)
+        {
+            h1.x = 3090;
+        }
+```
 ## Transforms
 
 ## Polymorphism
