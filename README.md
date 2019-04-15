@@ -15,17 +15,16 @@ The buttons on the top are to either communicate with 1 person or 3 people. The 
 
 # How it works
 
-
 # What I am most proud of in the assignment
 
 # Markdown Tutorial
 
 This is *emphasis*
 
-This is a bulleted list
-
-- Item
-- Item
+# CSV File
+- The CSV file I used is Attributes.csv, whish contained the level of strengh etc. of the soldiers.
+- The class Attributes.java is where get the details and get their values as local variables.
+- In UI.java I load the table into an aray list called "attributes". I load and print the details in the same function ( void loadTable() ).
 
 This is a numbered list
 
