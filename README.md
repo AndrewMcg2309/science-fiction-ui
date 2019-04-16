@@ -89,9 +89,59 @@ I used a global variable 'int COLOR_W' which was then used in an if statement to
         }
 ```
 ## Transforms
+- Below is one of many examples of popMatrix and pushMatrix
+- This was used for the main Planet for the location of the soldiers on the planet
+- I used translate so that their location would rotate as if they were on the surface of the planet
+```Java
+float rotateX = 20 * radians(t += (TWO_PI / 360));
+        pushMatrix();
 
+            translate(width / 2, height / 2);
+            rotateY(rotateX);
+            noFill();
+            stroke(0, 255, 255);
+            strokeWeight(1f);
+            sphere(r);
+
+            // Soldier Locations on planet
+            fill(255, 0, 0);
+            stroke(255, 0, 0);
+            translate(r - 80, r - 100);
+            sphere(m);
+
+            fill(255, 0, 255);
+            stroke(255, 0, 255);
+            translate(70 , -250);
+            sphere(m);
+
+            fill(255, 255, 0);
+            stroke(255, 255, 0);
+            translate(- 585, 70);
+            sphere(m);
+
+        popMatrix();
+```
 ## Polymorphism
+- Sun was created as child of Sphere
+```Java
+public class Sun extends Sphere
+{
 
+    Sun(float s, float r)
+    {
+        super(s, r);
+    }
+
+    void update()
+    {
+        //change in size
+        sphereSize = 50;
+        rotate = 20 * radians(t += (TWO_PI / 360));
+        rotateY(rotate);
+        sphere(sphereSize);
+    }
+}
+```
 ## Abstract Classes
 
 ## Interfaces
