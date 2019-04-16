@@ -655,8 +655,8 @@ public class UI extends PApplet
         ang1 += 1;
         ang2 += 5;
         pushMatrix();
-        translate(width / 2 - 50, height / 2 - 50);
-            //arc(AX, AY, rad + 500, rad + 500, radians(ang1), radians(ang1+300));
+        
+            translate(width / 2 - 50, height / 2 - 50);
             arc(AX, AY, rad + 600, rad + 200, radians(-ang2), radians(-ang2+150));
             
         popMatrix();
@@ -665,6 +665,7 @@ public class UI extends PApplet
     public void topRight()
     {
         pushMatrix();
+            
             translate(width - (width / 8), height / 6);
 
             noFill();
@@ -701,16 +702,18 @@ public class UI extends PApplet
 
 
     // Polygon for attributes in thop right corner
-    void polygon(int n, float cx, float cy, float r) {
+    void polygon(int n, float cx, float cy, float r) 
+    {
         float angle = 360.0f / n;
-      
+
         beginShape();
-        for (int i = 0; i < n; i++) {
-          vertex(cx + r * cos(radians(angle * i)),
+        for (int i = 0; i < n; i++) 
+        {
+            vertex(cx + r * cos(radians(angle * i)),
             cy + r * sin(radians(angle * i)));
         }
         endShape(CLOSE);
-      }
+    }
 
     public void drawGrid()
     {
