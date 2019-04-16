@@ -15,11 +15,11 @@ The buttons on the top are to either communicate with 1 person or 3 people. The 
 
 # How it works
 
+
 # What I am most proud of in the assignment
+What I am most proud about is the how I went about the project. Instead of trying to do it all in the space of 2 weeks I set myself a goal to make sure i work on it evry week and keep adding things to it. It gave me a chance to also think of new things and meant i was not worrying about getting it finished in time as I had the bulk of the assignment done with about a week or so to go. I am proud of many parts of the assignment but I feel my organisation and how I went about it really was my most proud aspect.
 
 # Markdown Tutorial
-
-This is *emphasis*
 
 ## CSV File
 - The CSV file I used is Attributes.csv, whish contained the level of strengh etc. of the soldiers.
