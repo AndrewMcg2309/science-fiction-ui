@@ -4,17 +4,16 @@ Name: Andrew McGowan
 
 Student Number: C16470866
 
+Youtube link: 
+
 # Description of the assignment
 
 My User Interface is a Sci-Fi control panel. My idea came from Prometheus, when they go down to a desolate planet and 3 people stay up in the ship monitoring them. 
 Mine is slightely different as it is 3 people, on different parts of the planet. 
 
-# Instructions
+# Instructions & How it works
 To UI is very simple to use. Simply hover over the 3 idividuals for their information. To make contact with them simply hold down the 'space bar' after clicking on their icons. The icon will change when you click on their icon. 
 The buttons on the top are to either communicate with 1 person or 3 people. The second last icon is to show you the location of each individual on the planet. The settings button resets everything.
-
-# How it works
-
 
 # What I am most proud of in the assignment
 What I am most proud about is the how I went about the project. Instead of trying to do it all in the space of 2 weeks I set myself a goal to make sure i work on it evry week and keep adding things to it. It gave me a chance to also think of new things and meant i was not worrying about getting it finished in time as I had the bulk of the assignment done with about a week or so to go. I am proud of many parts of the assignment but I feel my organisation and how I went about it really was my most proud aspect. My commits only date back a month ago when really I was working on it before hand and then we were sent a repo to fork and use for our projects.
