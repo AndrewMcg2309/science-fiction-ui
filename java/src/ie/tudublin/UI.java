@@ -17,7 +17,7 @@ public class UI extends PApplet
 
     //Array List
     ArrayList<Attributes> attributes = new ArrayList<Attributes>();
-    Table table;
+    Table table; 
 
     // Audio Input ( commms )
     public static int SAMPLE_RATE = 44100;
@@ -43,7 +43,7 @@ public class UI extends PApplet
     float ring1, ring2, ring3, ring4;
 
     // All Spheres , Polymorphism
-    float t, r, m, s;
+    float t, r, m, s, sa;
     Sphere sphere = new Sphere(80, 20 * radians(t += (TWO_PI / 360)));
     Sphere sunObject = new Sun(80, 20 * radians(t += (TWO_PI / 360)));
     
@@ -125,6 +125,7 @@ public class UI extends PApplet
         r = 300;
         m = 0;
         s = 100;
+        sa = 70;
 
         // Rings
         ring1 = 330;
@@ -839,7 +840,7 @@ public class UI extends PApplet
             rotateY(rotateX);
             stroke(255, 155, 155);
             noFill();
-            sphere(s - 30);
+            sphere(sa);
 
             strokeWeight(3);
                 rotateX(HALF_PI-.60f);
@@ -848,6 +849,22 @@ public class UI extends PApplet
                 ellipse(0, 0, ring3, ring3);
                 ellipse(0, 0, ring4, ring4);
 
+                if(mouseX >= 2430 && mouseX <= 2570 && mouseY >= 380 && mouseY <= 520)
+            {
+                sa = 100;
+                ring1 = 390;
+                ring2 = 370;
+                ring3 = 350;
+                ring4 = 330;
+            }
+            else
+            {
+                sa = 70;
+                ring1 = 330;
+                ring2 = 310;
+                ring3 = 290;
+                ring4 = 270;
+            }
         popMatrix();       
     }
 }
