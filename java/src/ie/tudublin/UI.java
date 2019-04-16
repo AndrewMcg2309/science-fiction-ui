@@ -394,6 +394,12 @@ public class UI extends PApplet
         {
             m = 0;
         }
+
+        // Exit
+        if(mouseX > 770 && mouseX < 870 && mouseY > 75 && mouseY < 135)
+        {
+            exit();
+        }
     }
 
     public void extraArc()
