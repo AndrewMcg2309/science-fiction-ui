@@ -141,9 +141,17 @@ public class Sun extends Sphere
     }
 }
 ```
-## Abstract Classes
-
 ## Interfaces
+- I attempted to make an interface class but was unable.
+- From what we had done I didnt have an object effecting another like AmmoPowerup etc.
+```Java
+package ie.tudublin;
+
+interface Rotation
+{
+    public void applyTo(Sphere s);
+}
+```
 
 ## Polygon
 - For the hexagon in the top right i used "Processing.org" to help me.
