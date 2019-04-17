@@ -144,3 +144,41 @@ public class Sun extends Sphere
 ## Abstract Classes
 
 ## Interfaces
+
+## Polygon
+- For the hexagon in the top right i used "Processing.org" to help me.
+![An image](images/hexagon.PNG)
+```Java
+void polygon(int n, float cx, float cy, float r) 
+    {
+        float angle = 360.0f / n;
+
+        beginShape();
+        for (int i = 0; i < n; i++) 
+        {
+            vertex(cx + r * cos(radians(angle * i)),
+            cy + r * sin(radians(angle * i)));
+        }
+        endShape(CLOSE);
+    }
+
+public void topRight()
+{
+    pushMatrix();
+            
+            translate(width - (width / 8), height / 6);
+
+            noFill();
+            stroke(0, 255, 255);
+            strokeWeight(2);
+            polygon(6, 0, 0, 300);
+
+            stroke(255);
+            strokeWeight(0.5f);
+            polygon(6, 0, 0, 200);
+            polygon(6, 0, 0, 250);
+            polygon(6, 0, 0, 150);
+
+        popMatrix();
+ }
+```
