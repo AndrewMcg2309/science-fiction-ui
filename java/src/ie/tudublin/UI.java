@@ -154,7 +154,6 @@ public class UI extends PApplet
             ellipse(mouseX, mouseY, 30, 30);
         }
         ellipse(mouseX, mouseY, 30, 30);
-        text("x: "+  mouseX + " y: " + mouseY, 30, 45);
         
         
         pushMatrix();
@@ -237,6 +236,7 @@ public class UI extends PApplet
         radar2.update();
         radar2.render();
 
+        hoverPlanets();
         extraArc();
         soldiers();
         buttons();
@@ -250,6 +250,39 @@ public class UI extends PApplet
 
         image(sun, 1100, 252, 400, 369);
         image(img, width / 3 + 155, height / 4 + 55, 970, 970);
+    }
+
+    public void hoverPlanets()
+    {
+        //Ringed Planet
+        if(mouseX >= 2430 && mouseX <= 2570 && mouseY >= 380 && mouseY <= 520)
+            {
+                pushMatrix();
+                fill(0, 255, 255);
+                textSize(30);
+                text("Planet: JI-2343 ;; Hab?: Unknown ;; Size: 34.234x10^32", 2050, 60);
+                popMatrix();
+            }
+        
+        // Sun
+        if(mouseX >= 1200 && mouseX <= 1400 && mouseY >= 345 && mouseY <= 550)
+            {
+                pushMatrix();
+                fill(0, 255, 255);
+                textSize(30);
+                text("Sun: VY-Canis Majoris ;; Hab?: No ;; Size: 34.234x10^37", 2050, 60);
+                popMatrix();
+            }
+
+        // Main 
+        if(mouseX >= 1610 && mouseX <= 2222 && mouseY >= 780 && mouseY <= 1390)
+            {
+                pushMatrix();
+                fill(0, 255, 255);
+                textSize(30);
+                text("Planet: K52-Plymoth ;; Hab?: Unknown ;; Size: 34.234x10^22", 2050, 60);
+                popMatrix();
+            }
     }
 
     public void drawDetails()
@@ -414,7 +447,7 @@ public class UI extends PApplet
 
         fill(0, 255, 255);
         textSize(40);
-        text("91%", 285, 230);
+        text("99%", 285, 230);
         noFill();
         
         pushMatrix();
@@ -619,6 +652,9 @@ public class UI extends PApplet
 
     public void drawLeftMid()
     {
+        fill(0, 255, 255);
+        textSize(30);
+        text("Radar : Location", 280, 520);
         float frame = 50;
         stroke(255);
         noFill();
@@ -840,6 +876,8 @@ public class UI extends PApplet
             noFill();
             sphere(s);
 
+            
+
         popMatrix();
 
         // Ringed Planet
@@ -858,7 +896,7 @@ public class UI extends PApplet
                 ellipse(0, 0, ring3, ring3);
                 ellipse(0, 0, ring4, ring4);
 
-                if(mouseX >= 2430 && mouseX <= 2570 && mouseY >= 380 && mouseY <= 520)
+            if(mouseX >= 2430 && mouseX <= 2570 && mouseY >= 380 && mouseY <= 520)
             {
                 sa = 100;
                 ring1 = 390;
@@ -874,6 +912,7 @@ public class UI extends PApplet
                 ring3 = 290;
                 ring4 = 270;
             }
+
         popMatrix();       
     }
 }
