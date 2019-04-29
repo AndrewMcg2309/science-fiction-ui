@@ -24,6 +24,23 @@ Mine is slightely different as it is 3 people, on different parts of the planet.
  - Press any of these and you will communicate with that person, when you hover over you will see their details
 
 # How it works
+settings(); -- Loading images, audio and Pvectors
+loadTAble(); -- Loads table from csv file and prints them in console
+
+draw(); -- Has the lines for navagation, ellipse when pressed, IF statements for which person to communicate to
+
+hoverPlanets(); -- What happens when hovering over each planet
+extraArc(); -- Arc rotating around the main planet and the loading icon in the top left
+soldiers(); -- The details that come up when hovering over the soldiers as well as the display of their frames
+buttons(); -- The buttons on the top of the UI
+topRight(); -- The polygon and attribute table on the top right
+drawGrid(); -- The grid that surrounds the UI
+drawSphere(); -- Draws the rotating spheres and the rings around the ringed sphere
+drawLeftMid(); -- This draws the lcation on the left along with the enemies in the radar
+heartMonitor(); -- The 3 heart monitors on the right
+drawDetails(); -- Rank, name, ID etc...
+
+mousePressed(); -- Clicking certain areas changes a gobal variable for If statments, thus makaing a change on screen
 
 
 # What I am most proud of in the assignment
