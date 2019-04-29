@@ -6,6 +6,8 @@ Student Number: C16470866
 
 Youtube link: https://www.youtube.com/watch?v=-EgfXMudcyM
 
+![An image](images/full.PNG)
+
 # Description of the assignment
 
 My User Interface is a Sci-Fi control panel. My idea came from Prometheus, when they go down to a desolate planet and 3 people stay up in the ship monitoring them. 
