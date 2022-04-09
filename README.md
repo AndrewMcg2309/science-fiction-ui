@@ -1,4 +1,4 @@
-# SciFi UI Project
+# 2nd Year SciFi UI Project
 
 Name: Andrew McGowan
 
