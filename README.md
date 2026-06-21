@@ -4,8 +4,6 @@ Name: Andrew McGowan
 
 Student Number: C16470866
 
-Youtube link: https://www.youtube.com/watch?v=-EgfXMudcyM
-
 ![An image](images/full.png)
 
 # Description of the assignment
